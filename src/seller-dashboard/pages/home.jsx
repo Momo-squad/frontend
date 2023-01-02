@@ -7,7 +7,7 @@ export const Home = () => {
 
     return(
         <div>
-            Hello {user}
+            Hello {user.email}
         </div>
     )
 }
