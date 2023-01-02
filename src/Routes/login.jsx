@@ -1,7 +1,10 @@
 import { useContext } from "react";
-import UserContext from "../context/userContext";
+import { UserContext } from "../context/userContext";
+
+import { useNavigate  } from "react-router-dom";
 
 export const Login = () => {
+    let navigate = useNavigate()
     const [user, setUser] = useContext(UserContext);
 
     //fetch request on datase and check if user true or not (inside handle change)
@@ -9,6 +12,13 @@ export const Login = () => {
     const handleChange = (event) => {
         event.preventDefault();
         console.log(user)
+
+        setTimeout(() => {
+          if (user.password !== "123456"){
+            navigate("/");
+          }
+          navigate("/dashboard");
+        }, 2000)
       }
 
     return(

@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import UserContext from "../../context/userContext"
+import { UserContext } from "../../context/userContext"
 
 export const Home = () => {
     const [user, setUser] = useContext(UserContext);
@@ -7,7 +7,7 @@ export const Home = () => {
 
     return(
         <div>
-            Hello {user}
+            Hello {user.email}
         </div>
     )
 }

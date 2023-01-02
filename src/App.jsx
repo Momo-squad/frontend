@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import './App.css'
 
-import {BrowserRouter, Routes, Route} from "react-router-dom"
+import {BrowserRouter, Routes, Route, NavLink } from "react-router-dom"
 
 //importing userContext and permission
-import UserContext from './context/userContext'
+import { UserContext } from './context/userContext'
 
 //importing componetns
 import { Login } from './Routes/login'
@@ -12,9 +12,16 @@ import {Home} from './seller-dashboard/pages/home'
 
 function App() {
 
+  const [user, setUser] = useState({
+    email: "",
+    password: "",  
+    role: "user",
+  });
+
   return (
-    <UserContext>
+    <UserContext.Provider value={[user, setUser]}>
       <div className="App">
+
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<h1>Hello Wolrd</h1>} />
@@ -46,7 +53,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
-  </UserContext>
+  </UserContext.Provider>
   )
 }
 
