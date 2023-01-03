@@ -12,13 +12,7 @@ export const Login = () => {
     const handleChange = (event) => {
         event.preventDefault();
         console.log(user)
-
-        setTimeout(() => {
-          if (user.password !== "123456"){
-            navigate("/");
-          }
           navigate("/dashboard");
-        }, 2000)
       }
 
     return(

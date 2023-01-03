@@ -1,20 +1,24 @@
-import { useState } from 'react'
+import { Suspense, lazy, useState } from 'react'
+import {BrowserRouter, Routes, Route } from "react-router-dom"
+
 import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.min.js"
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
-import {BrowserRouter, Routes, Route, NavLink } from "react-router-dom"
-
-//importing userContext and permission
+//importing contexts
 import { UserContext } from './context/userContext'
 
 //importing dashboard
 import {Dashboard} from "./dashboard/dashboard"
 
-//importing componetns
+//importing dashboard componetns
 import { Login } from './Routes/login'
 import { UserSidebar } from './dashboard/user-dashboard/components/sidebar'
-import { Sensors } from './dashboard/user-dashboard/components/sensors'
+
+//lazy load the dashboards components
+const UserHome  = lazy(() => import('./dashboard/user-dashboard/components/home')) ;
+const Sensors  = lazy(() => import('./dashboard/user-dashboard/components/sensors')) ;
 
 function App() {
 
@@ -27,6 +31,7 @@ function App() {
   return (
     <UserContext.Provider value={[user, setUser]}>
       <div className="App">
+        <Suspense fallback={<>Loading</>}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<h1>Hello Wolrd</h1>} />
@@ -42,8 +47,8 @@ function App() {
               path="/dashboard" 
               element={
               <Dashboard 
-                sidebar={<UserSidebar active={"home"}/>} 
-                component={<h1>This is home page of dashbaord</h1>} /> 
+                sidebar={<UserSidebar active={"home"}/>}
+                component={<UserHome />}/> 
               }/>
             {/* common routes for farmer's and seller's dashboard */}
             <Route path="/dashboard/forum" element={<h1>Forum</h1>} />
@@ -54,7 +59,7 @@ function App() {
               element={
               <Dashboard 
                 sidebar={<UserSidebar active={"sensors"}/>} 
-                component={<Sensors/>} /> 
+                component={<Sensors />} /> 
               }/>
 
             <Route path="/dashboard/insights" element={<h1>Soil Insights Page</h1>} />
@@ -71,6 +76,7 @@ function App() {
             <Route path="/dashboard/*" element={<h1>Error 404! Page not found!</h1>} />
           </Routes>
         </BrowserRouter>
+        </Suspense>
       </div>
   </UserContext.Provider>
   )

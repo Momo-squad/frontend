@@ -1,6 +1,4 @@
 import "../styles/sidebar.css"
-import 'bootstrap-icons/font/bootstrap-icons.css';
-
 import { useNavigate } from "react-router-dom";
 
 export const UserSidebar = ({active}) => {
