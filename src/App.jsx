@@ -12,6 +12,8 @@ import { Loading } from './Routes/loading'
 import { UserContext } from './context/userContext'
 import { UserHomeContextProvider } from './context/userHome'
 
+//importing Forum and its components
+import { Forum } from './forum/Forum'
 
 //importing dashboard
 import {Dashboard} from "./dashboard/dashboard"
@@ -45,7 +47,7 @@ function App() {
         <Suspense fallback={<Loading />}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<h1>Hello Wolrd</h1>} />
+            <Route path="/" element={<Forum />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<h1>Signup</h1>} />
             {/* list out all possible dashboard pages */}
