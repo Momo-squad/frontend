@@ -1,16 +1,18 @@
 import { createContext, useState } from "react";
 
-const userHomeContext = createContext({
-    userHomeData: {},
+const UserHomeContext = createContext({
+    userHomeData: null,
     setUserHomeData: () => {}
 });
 
-export const UserHomeContext = ({children}) =>{
+const UserHomeContextProvider = ({children}) =>{
     const [userHomeData, setUserHomeData] = useState(null);
 
     return(
-        <userHomeContext.Provider value={[userHomeData, setUserHomeData]}>
+        <UserHomeContext.Provider value={[userHomeData, setUserHomeData]}>
             {children}
-        </userHomeContext.Provider>
+        </UserHomeContext.Provider>
     )
 }
+
+export {UserHomeContext, UserHomeContextProvider};
