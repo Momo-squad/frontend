@@ -1,0 +1,36 @@
+.forum .home .feed{
+    margin-top: 70px;
+    flex: 1;
+    min-width: 350px;
+    height: 200vh;
+    background-color: white;
+    overflow-x: hidden;
+}
+
+.feed .create-post{
+    padding: 20px 15px 20px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 20px;
+    background-color: #f7f7f7;
+}
+
+.feed .create-post .user-img img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.feed .create-post .input-field,
+.feed .create-post .input-field input{
+    width: 90%;
+    height: 40px;
+}
+
+.feed .create-post .input-field input{
+    border: 1px solid #cccc;
+    border-radius: 5px;
+    text-indent: 15px;
+}

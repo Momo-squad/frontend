@@ -1,7 +1,11 @@
+import "../styles/Profile.css"
+
 export const Profile = () => {
     return (
         <>
-        This is Profile
+            <div className="profile">
+             This is Profile
+            </div>
         </>
     )
 }

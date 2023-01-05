@@ -1,17 +1,22 @@
-.navbar{
-    padding: 0 10%;
+.forum .navbar{
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    padding: 0 2em;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    position: sticky;
     width: 100%;
     height: 70px;
     box-shadow: 0 2.5px 5px #dddd;
+    background-color: white;
 }
 
 .navbar .brand{
+    position: absolute;
+    left: 10%;
     padding: 1px 5px;
     color: white;
     background-color: black;
@@ -45,6 +50,7 @@
 
 .navbar .searchBar{
     width: 25%;
+    min-width: 300px;
 }
 
 .navbar .searchBar input{

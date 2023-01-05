@@ -23,23 +23,22 @@ export const Navbar = () => {
                 data-bs-toggle="tab"
                 data-bs-target="#nav-qna"
                 role="tab">
-                    <i class="bi bi-question-square"></i>
+                    <i className="bi bi-question-square"></i>
                 </button>
                 <button
                 className="items nav-link"
                 data-bs-toggle="tab"
                 data-bs-target="#nav-market"
                 role="tab">
-                    <i class="bi bi-graph-up"></i>
+                    <i className="bi bi-graph-up"></i>
                 </button>
                 <button
                 className="items nav-link"
                 data-bs-toggle="tab"
                 data-bs-target="#nav-dashboard"
                 role="tab">
-                    <i class="bi bi-box-seam"></i>
+                    <i className="bi bi-box-seam"></i>
                 </button>
-            </div>
 
             <div className="searchBar">
                 <input
@@ -67,17 +66,16 @@ export const Navbar = () => {
                     <button className="notification">
                         <i className="bi bi-bell-fill"></i>
                     </button>
-                    <button className="profile">
+                    <button
+                    className="profile-btn nav-link"
+                    data-bs-toggle="tab"
+                    data-bs-target="#farmap-profile"
+                    role="tab">
                         <i className="bi bi-person-circle"></i>
                     </button>
                 </div>
             </div>
-        </div>
-        <div class="tab-content" id="nav-tabContent">
-            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" tabindex="0">This is Home Tab</div>
-            <div class="tab-pane fade show" id="nav-qna" role="tabpanel" tabindex="0">This is QNA tab</div>
-            <div class="tab-pane fade show" id="nav-market" role="tabpanel" tabindex="0">This is Market Stats Tab</div>
-            <div class="tab-pane fade show" id="nav-dashboard" role="tabpanel" tabindex="0">This is Dashboard tab</div>
+            </div>
         </div>
         </>
     )
