@@ -1,10 +1,12 @@
 .forum .home .feed{
-    margin-top: 70px;
     flex: 1;
+    margin-top: 70px;
     min-width: 350px;
     height: 200vh;
-    background-color: white;
     overflow-x: hidden;
+    border-radius: 15px;
+    /* box-shadow: 0 2.5px 5px #eeee; */
+    /* background-color: white; */
 }
 
 .feed .create-post{
@@ -13,7 +15,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 0 20px;
+    gap: 0 15px;
     background-color: #f7f7f7;
 }
 
@@ -33,4 +35,144 @@
     border: 1px solid #cccc;
     border-radius: 5px;
     text-indent: 15px;
+}
+
+
+/* ======================================= */
+/* Individual feed posts css goes here*/
+
+.feed .feed-posts{
+    padding: 15px 0;
+    width: 100%;
+    height: max-content;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.feed .feed-posts .post{
+    margin: 10px 0;
+    padding: 20px 5px;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: 0 2.5px 5px #eeee;
+    background-color: white;
+}
+
+.post .post-counts{
+    margin: 50px 20px 0 30px;
+    width: 2em;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.post .post-counts button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.post .post-counts button i{
+    padding: 0 5px;
+    height: 35px;
+    color: rgb(66, 66, 66);
+    font-size: 25px !important;
+}
+
+.post .post-data-container{
+    padding: 0 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.post .post-data-container .author{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.post .post-data-container .author .author-img img,
+.post .post-data-container .author .author-img{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #dddd;
+    border-radius: 50%;
+} 
+
+.post .post-data-container .author .follow-btn-container button{
+    padding: 2px 10px;
+    border: 1px solid #dddd;
+    border-radius: 3px;
+}
+
+.post .post-data-container .author .follow-btn-container button.follow-btn{
+    color: white;
+    background-color: black;
+}
+
+.post-data-container .author-keywords{
+    margin: 17px 0 12px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.post-data-container .author-keywords .keyword{
+    padding: 2px 7px;
+    background-color: azure;
+}
+
+.post-data-container .author-post{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.post-data-container .author-post p.description{
+    font-size: 16px;
+}
+
+.post-data-container .author-post .author-post-image{
+    margin-top: 5px;
+    width: auto;
+    height: auto;
+}
+
+.post-data-container .author-post .author-post-image img{
+    max-width: 400px;
+    height: 300px;
+}
+
+.post-data-container .post-btns{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    margin: 20px 0 10px 0;
+    /* background-color: antiquewhite; */
+}
+
+.post-data-container .post-btns button{
+    padding: 5px 20px;
+    border: 1px solid #dddd;
+    outline: none;
+}
+.post-data-container .post-btns button i{
+    margin-right: 10px;
 }

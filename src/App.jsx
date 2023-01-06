@@ -38,7 +38,7 @@ function App() {
     email: "",
     password: "",  
     role: "user",
-  });
+});
 
   return (
     <UserHomeContextProvider>

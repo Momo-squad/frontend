@@ -1,6 +1,8 @@
 import "../styles/Sidebar.css"
 
 export const Sidebar = () => {
+    const newFollowingPosts = 4;
+
     return (
         <div className="home-sidebar">
             <div className="feed-sort-btns">
@@ -21,7 +23,9 @@ export const Sidebar = () => {
                 <button className="item" id="followed">
                     <i className="bi bi-plus-square-fill"></i>
                     <span>
-                        Following
+                        <span className="following-posts-badge-container">
+                            Following 
+                            <span class="badge text-bg-secondary">{newFollowingPosts}</span></span>
                         <small className="text-muted">Explored your favourites</small>
                     </span>
                 </button>
