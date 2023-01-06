@@ -83,7 +83,7 @@
 }
 
 .post .post-counts button i{
-    padding: 0 5px;
+    padding: 0 15px;
     height: 35px;
     color: rgb(66, 66, 66);
     font-size: 25px !important;
@@ -160,6 +160,10 @@
     height: 300px;
 }
 
+.post-data-container .below-posts{
+    display: flex;
+    flex-direction: column;
+}
 .post-data-container .post-btns{
     display: flex;
     flex-direction: row;
@@ -175,4 +179,109 @@
 }
 .post-data-container .post-btns button i{
     margin-right: 10px;
+}
+
+/* ========================================================== */
+/* comment box css goes here */
+
+.post-data-container .comment-box{
+    padding-right: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.comment-box .create-comment-wrapper{
+    position: relative;
+    margin: 10px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #dddd;
+    border-radius: 25px;
+    background-color: white;
+}
+
+.comment-box .create-comment-wrapper .author-img{
+    position: absolute;
+    left: 5px;
+}
+
+.comment-box .create-comment-wrapper .author-img,
+.comment-box .create-comment-wrapper .author-img img{
+    width: 35px;
+    height: 35px;
+    border: 1px solid #dddd;
+    border-radius: 50%;
+}
+.comment-box .create-comment-wrapper .create-comment{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.comment-box .create-comment-wrapper .create-comment,
+.comment-box .create-comment-wrapper textarea{
+    width: 98%;
+    height: 45px;
+    border-radius: 25px;
+}
+
+.comment-box .create-comment-wrapper textarea{
+    resize: none;
+    margin-left: 50px;
+    padding: 11px 70px 0 5px;
+    border: none;
+    outline: none;
+}
+
+.comment-box .submit-comment{
+    position: absolute;
+    right: 0;
+}
+
+.comment-box .submit-comment button{
+    padding: 4px 20px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.comment-box .submit-comment button i{
+    font-size: 20px;
+}
+
+.comment-box .comment-header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-box .comments{
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.comment-box .comments .comment{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.comment-box .comments .comment .commenter-img{
+    margin-right: 10px;
+}
+.comment-box .comments .comment .commenter-img,
+.comment-box .comments .comment .commenter-img img{
+    width: 40px;
+    height: 40px;
 }

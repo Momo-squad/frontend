@@ -22,6 +22,10 @@ export const Feed = () => {
         setFollowing(!following)
     }   
 
+    const handleCommentSubmit = () => {
+        //do sth here
+    }
+
     const handleUpvoteClick = (e) => {
         const icon = e.target;
         const elem = e.target.parentElement;
@@ -168,17 +172,66 @@ export const Feed = () => {
                                 </div>
                             }
                         </div>
-                        <div className="post-btns">
-                            <button className="comment">
-                                <i class="bi bi-chat-left-text"></i>
-                                Comment
-                            </button>
-                            <button className="share">
-                                <i class="bi bi-send"></i>
-                                Share
-                            </button>
+                        <div className="below-posts">
+                            <div className="post-btns">
+                                <button
+                                className="comment"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#post-1">
+                                    <i className="bi bi-chat-left-text"></i>
+                                    Comment
+                                </button>
+                                <button className="share">
+                                    <i className="bi bi-share"></i>
+                                    Share
+                                </button>
+                            </div>
+                            
+                            <div className="content-box-wrapper">
+                                <div className="collapse" id="post-1">
+                                    <div className="comment-box">
+                                        <div className="create-comment-wrapper">
+                                            <span className="author-img">
+                                                <img src="https://scontent-lcy1-2.xx.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=deXb1cmmirkAX9rGgbq&_nc_ht=scontent-lcy1-2.xx&oh=00_AfDN1X9pL9MdcIFm6ti4wjSxcyc_cW5dNh-TQKqL9PXnrA&oe=63BB9B2F" alt="person" />
+                                            </span>
+                                            <span className="create-comment">
+                                                <textarea placeholder="Write your comments here..."></textarea>
+                                            </span>
+                                            <span className="submit-comment">
+                                                <button
+                                                type="submit"
+                                                onChange={handleCommentSubmit}>
+                                                    <i className="bi bi-send"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                        <div className="comment-header">
+                                            <div className="dropdown options">
+                                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                                    Sort by
+                                                </button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="#">Relevance</a></li>
+                                                    <li><a class="dropdown-item" href="#">Newest</a></li>
+                                                </ul>
+                                            </div>
+                                            <div className="text-muted totalComments">24 comments</div>
+                                        </div>
+                                        <div className="comments">
+                                            <div className="comment">
+                                                <span className="commenter-img">
+                                                    <img src="https://scontent-lcy1-2.xx.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=deXb1cmmirkAX9rGgbq&_nc_ht=scontent-lcy1-2.xx&oh=00_AfDN1X9pL9MdcIFm6ti4wjSxcyc_cW5dNh-TQKqL9PXnrA&oe=63BB9B2F" alt="person" />
+                                                </span>
+                                                <span className="text">
+                                                    <small className="commented-date">8 months ago</small>
+                                                    <p className="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias eveniet excepturi aliquid quas recusandae? Quidem accusantium</p>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
                 <div className="post" id="2">
@@ -240,13 +293,13 @@ export const Feed = () => {
                             <button
                             className="comment"
                             onClick={handleCommentSection}>
-                                <i class="bi bi-chat-left-text"></i>
+                                <i className="bi bi-chat-left-text"></i>
                                 Comment
                             </button>
                             <button
                             className="share"
                             onClick={handleCommentSection}>
-                                <i class="bi bi-send"></i>
+                                <i className="bi bi-send"></i>
                                 Share
                             </button>
                         </div>
