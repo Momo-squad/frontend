@@ -16,6 +16,7 @@
 }
 
 .navbar .brand{
+    margin-left: 7.5%;
     width: 105px;
     padding: 1px 5px;
     color: white;
@@ -23,13 +24,13 @@
 }
 
 .navbar .center{
-    width: calc(100% - 105px);
+    width: calc(92.5% - 105px);
     padding-right: 105px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 5%;
 }
 
 .navbar .center .left{
@@ -52,12 +53,12 @@
 .navbar .actionButtons button.active,
 .navbar .center button.active{
     color: white;
-    border: 1px solid #dddd;
-    background-color: #20c997;
+    border: 1px solid #017368;
+    background-color: #00897b;
 }
 
 .navbar .searchBar{
-    width: 30%;
+    width: 35%;
     min-width: 300px;
 }
 
@@ -70,6 +71,10 @@
     background-color: rgb(226, 233, 235);
 }
 
+.navbar .actionButtons .loggedInBtns button{
+    border: none;
+    color: black !important;
+}
 .navbar .actionButtons .loggedInBtns,
 .navbar .actionButtons .logedOutBtns{
     display: flex;

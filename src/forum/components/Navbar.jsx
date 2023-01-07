@@ -24,13 +24,6 @@ export const Navbar = () => {
                 <button
                 className="items nav-link"
                 data-bs-toggle="tab"
-                data-bs-target="#nav-qna"
-                role="tab">
-                    <i className="bi bi-question-square"></i>
-                </button>
-                <button
-                className="items nav-link"
-                data-bs-toggle="tab"
                 data-bs-target="#nav-market"
                 role="tab">
                     <i className="bi bi-graph-up"></i>

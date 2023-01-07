@@ -68,10 +68,10 @@
 /* -------------------------------------------- */
 
 .sidebar-menu.home button.home,
-.sidebar-menu.forum button.forum,
+.sidebar-menu.operations button.operations,
 .sidebar-menu.sensors button.sensors,
 .sidebar-menu.insights button.insights,
-.sidebar-menu.insights.reports button.insights.reports,
+.sidebar-menu.reports .collapse button.reports,
 .sidebar-menu.sell button.sell,
 .sidebar-menu.disease button.disease,
 .sidebar-menu.setup button.setup,
@@ -80,6 +80,10 @@
     color: #11713f;
 }
 
+.sidebar-menu.reports button.insights{
+    color: black;
+    background-color: transparent;
+}
 /* .sidebar-menu.insights.reports button.item.active,
 .sidebar-menu.sensors button.item.active,
 .sidebar-menu.insights button.item.active{

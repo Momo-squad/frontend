@@ -27,7 +27,6 @@ export const Forum = () => {
                     <FarmDisplay />
                 </div>
 
-                <div className="tab-pane fade show" id="nav-qna" role="tabpanel" tabIndex="0">This is QNA tab</div>
                 <div className="tab-pane fade show" id="nav-market" role="tabpanel" tabIndex="0">This is Market Stats Tab</div>
                 <div className="tab-pane fade show" id="nav-dashboard" role="tabpanel" tabIndex="0">This is Dashboard tab</div>
                 

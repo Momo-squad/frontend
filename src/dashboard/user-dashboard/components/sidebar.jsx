@@ -16,9 +16,9 @@ export const UserSidebar = ({active}) => {
                     <i className="bi bi-box-seam"></i>
                     Dashboard
                 </button>
-                <button className="item forum" onClick={() => Navigate("/dashboard/forum")}>
+                <button className="item operations" onClick={() => Navigate("/dashboard/operations")}>
                     <i className="bi bi-menu-up"></i>
-                    Forum
+                    Operations
                 </button>
                 <button className="item sensors" onClick={() => Navigate("/dashboard/sensors")}>
                     <i className="bi bi-cpu"></i>
@@ -36,7 +36,7 @@ export const UserSidebar = ({active}) => {
 
                 {/* nested button for insights page */}
                 <div className="collapse multi-collapse" id="insightsCollapse">
-                    <button className="item insights reports" onClick={() => Navigate("/dashboard/insights/reports")}>
+                    <button className="item reports" onClick={() => Navigate("/dashboard/insights/reports")}>
                         <i className="bi bi-cart"></i>
                         Reports
                     </button>

@@ -17,20 +17,22 @@ function fetchData(setUserHomeData){
 
 const UserHome = () => {
     const [userHomeData, setUserHomeData] = useContext(UserHomeContext);
-
     console.log({prev: userHomeData})
-
     if (userHomeData == {} || userHomeData == null){
         fetchData(setUserHomeData);
     }
+
     return(
-        <>
-            <div className="userHome">
-                hello this is user's dashbaord
-                <br />
-                Data: {userHomeData && userHomeData.id}
+        <div className="dashboard-home">
+            <label htmlFor="#" className="content-header">Dashboard</label>
+            <div className="left">
+                <div className="alert-system"></div>
             </div>
-        </>
+            <div className="right">
+                <div className="weather-container"></div>
+                <div className="news-container"></div>
+            </div>
+        </div>
     )
 }
 

@@ -27,6 +27,11 @@ import UserHome from './dashboard/user-dashboard/components/home'
 import Sensors from './dashboard/user-dashboard/components/sensors'
 import Insights from './dashboard/user-dashboard/components/insights'
 import InsightReports from './dashboard/user-dashboard/components/insightReports'
+import Operations from './dashboard/user-dashboard/components/operations'
+import Sell from './dashboard/user-dashboard/components/sell'
+import Disease from './dashboard/user-dashboard/components/disease'
+import Setup from './dashboard/user-dashboard/components/setup'
+import Profile from './dashboard/user-dashboard/components/profile'
 
 //lazy load the dashboards components
 // const UserHome  = lazy(() => import('./dashboard/user-dashboard/components/home')) ;
@@ -64,7 +69,11 @@ function App() {
                 component={<UserHome />}/> 
               }/>
             {/* common routes for farmer's and seller's dashboard */}
-            <Route path="/dashboard/forum" element={<h1>Forum</h1>} />
+            <Route path="/dashboard/operations" element={
+              <Dashboard 
+                sidebar={<UserSidebar active={"operations"}/>} 
+                component={<Operations />} /> 
+              } />
 
             {/* routes for farmer's dashboard */}
             <Route
@@ -91,10 +100,26 @@ function App() {
                 component={<InsightReports />} />
               }/>
 
-            <Route path="/dashboard/disease" element={<h1>Disease Detection Page</h1>} />
-            <Route path="/dashboard/setup" element={<h1>Dashboard Setup Page</h1>} />
-            <Route path="/dashboard/profile" element={<h1>Edit Profile Page</h1>} />
-            <Route path="/dashboard/sell" element={<h1>Porduct Sell Page</h1>} />
+            <Route path="/dashboard/disease" element={
+              <Dashboard
+                sidebar={<UserSidebar active={"disease"}/>}
+                component={<Disease />} />
+              } />
+            <Route path="/dashboard/setup" element={
+              <Dashboard
+                sidebar={<UserSidebar active={"setup"}/>}
+                component={<Setup />} />
+              } />
+            <Route path="/dashboard/profile" element={
+              <Dashboard
+                sidebar={<UserSidebar active={"profile"}/>}
+                component={<Profile />} />
+              }/>
+            <Route path="/dashboard/sell" element={
+              <Dashboard
+                sidebar={<UserSidebar active={"sell"}/>}
+                component={<Sell />} />
+              }/>
 
             {/* routes for seller's dashboard */}
             <Route path="/dashboard/buy" element={<h1>Seller's Buy Page</h1>} />
