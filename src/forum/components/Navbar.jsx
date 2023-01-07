@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 export const Navbar = () => {
     const navigate = useNavigate()
-    const [isLoggedIn, setLoggedStatus] = useState(true)
+    const [isLoggedIn, setLoggedStatus] = useState(false)
     return (
         <>
         <div className="navbar">
@@ -68,12 +68,28 @@ export const Navbar = () => {
                 
                 {!isLoggedIn &&
                 <div className="loggedInBtns">
-                    <button className="chat">
-                        <i className="bi bi-chat-left-dots-fill"></i>
-                    </button>
-                    <button className="notification">
-                        <i className="bi bi-bell-fill"></i>
-                    </button>
+                    <div className="dropdown">
+                        <button
+                        data-bs-toggle="dropdown"
+                        className="chat">
+                            <i className="bi bi-chat-left-dots-fill"></i>
+                        </button>
+                        <div className="dropdown-menu">
+                           this is chat dropdown
+                        </div>
+                    </div>
+                
+                    <div className="dropdown">
+                        <button
+                        data-bs-toggle="dropdown"
+                        className="notification">
+                            <i className="bi bi-bell-fill"></i>
+                        </button>
+                        <div className="dropdown-menu">
+                            this is notification dropdown
+                        </div>
+                    </div>
+
                     <button
                     className="profile-btn nav-link"
                     data-bs-toggle="tab"

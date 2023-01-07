@@ -9,14 +9,9 @@ const handlePostsFetch = () => {
 }
 
 export const Feed = () => {
-    const [isOpen, setIsOpen] = useState(false);
     const [following, setFollowing] = useState(false);
     const hasImage = true;
     const postUpvoteCount = 10;
-
-    const showModal = () => setIsOpen(true);
-    const hideModal = () => setIsOpen(false);
-    const FormModal = () => new Modal('#myModal', options)
 
     const handleFollow = () => {
         setFollowing(!following)
@@ -82,8 +77,8 @@ export const Feed = () => {
                 upVoteIcon.classList.add("bi-arrow-up-square")
 
                 elem.classList.toggle("inactive")
-                icon.classList.remove("bi-arrow-down-square")
-                icon.classList.add("bi-arrow-down-square-fill")
+                icon.classList.remove("bi-arrow-down-square-fill")
+                icon.classList.add("bi-arrow-down-square")
             }
         } else {
             upVoteElem.classList.toggle("inactive");
@@ -103,6 +98,25 @@ export const Feed = () => {
 
     return (
         <>
+        {/* Create post modal */}
+        <div className="modal fade" id="exampleModal" tabIndex="-1">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                    <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div className="modal-body">
+                        k cha hau
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" className="btn btn-primary">Save changes</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        
         <div className="feed">
             <div className="create-post">
                 <span className="user-img">
@@ -111,7 +125,8 @@ export const Feed = () => {
                 <span className="input-field">
                     <input
                     type="text" 
-                    onFocus={() => showModal()}
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
                     placeholder="Share something new"/>
                 </span>
             </div>
@@ -136,7 +151,10 @@ export const Feed = () => {
                             <span className="author-img">
                                 <img src="https://scontent-lcy1-2.xx.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=deXb1cmmirkAX9rGgbq&_nc_ht=scontent-lcy1-2.xx&oh=00_AfDN1X9pL9MdcIFm6ti4wjSxcyc_cW5dNh-TQKqL9PXnrA&oe=63BB9B2F" alt="pp" />
                             </span>
-                            <span className="author-name">Bibek Shah</span>
+                            <span>
+                                <p className="author-name">Bibek Shah</p>
+                                <small className="author-role text-muted">Farmer</small>
+                            </span>
                             <span className="follow-btn-container">
                                 {
                                     following === false ?
@@ -167,8 +185,23 @@ export const Feed = () => {
                                 hasImage === false
                                 ? <></>
                                 : 
-                                <div className="author-post-image">
-                                    <img src="https://diaryofdennis.files.wordpress.com/2015/08/random-plant-photo.jpg" alt="image" />
+                                <div id="postImagesCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel">
+                                    <div className="carousel-inner">
+                                        <div className="author-post-image carousel-item active">
+                                            <img className="d-block w-100" src="https://diaryofdennis.files.wordpress.com/2015/08/random-plant-photo.jpg" alt="image" />
+                                        </div>
+                                        <div className="author-post-image carousel-item active">
+                                            <img className="d-block w-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReARrLImlNJRQNaxGjv6civEey3cVKUdP6Ag&usqp=CAU" alt="image" />
+                                        </div>
+                                    </div>
+                                    <button className="carousel-control-prev" type="button" data-bs-target="#postImagesCarousel" data-bs-slide="prev">
+                                        <span className="carousel-control-prev-icon"></span>
+                                        <span className="visually-hidden">Previous</span>
+                                    </button>
+                                    <button className="carousel-control-next" type="button" data-bs-target="#postImagesCarousel" data-bs-slide="next">
+                                        <span className="carousel-control-next-icon"></span>
+                                        <span className="visually-hidden">Next</span>
+                                    </button>
                                 </div>
                             }
                         </div>
@@ -266,7 +299,10 @@ export const Feed = () => {
                             <span className="author-img">
                                 <img src="https://scontent-lcy1-2.xx.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=deXb1cmmirkAX9rGgbq&_nc_ht=scontent-lcy1-2.xx&oh=00_AfDN1X9pL9MdcIFm6ti4wjSxcyc_cW5dNh-TQKqL9PXnrA&oe=63BB9B2F" alt="pp" />
                             </span>
-                            <span className="author-name">Bibek Shah</span>
+                            <span>
+                                <p className="author-name">Bibek Shah</p>
+                                <small className="author-role text-muted">Farmer</small>
+                            </span>
                             <span className="follow-btn-container">
                                 {
                                     following === false ?
@@ -366,22 +402,6 @@ export const Feed = () => {
                     </div>
                 </div>
             </div>
-
-            {/* Create post modal */}
-            {/* <Modal show={isOpen} onHide={hideModal}>
-                <Modal.Header closeButton>
-                <Modal.Title>Modal title</Modal.Title>
-                </Modal.Header>
-
-                <Modal.Body>
-                <p>Modal body text goes here.</p>
-                </Modal.Body>
-
-                <Modal.Footer>
-                    <button variant="secondary" onClick={hideModal}>Close</button>
-                    <Button variant="primary">Save changes</Button>
-                </Modal.Footer>
-            </Modal> */}
         </div>
         </>
     )
