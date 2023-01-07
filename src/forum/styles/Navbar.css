@@ -3,6 +3,7 @@
     top: 0;
     z-index: 999;
     padding: 0 2em;
+    padding-left: calc(5% - 2em);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -15,18 +16,25 @@
 }
 
 .navbar .brand{
-    position: absolute;
-    left: 10%;
+    width: 105px;
     padding: 1px 5px;
     color: white;
     background-color: black;
 }
 
 .navbar .center{
+    width: calc(100% - 105px);
+    padding-right: 105px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 20px;
+}
+
+.navbar .center .left{
+    display: flex;
+    flex-direction: row;
     gap: 20px;
 }
 
@@ -71,6 +79,17 @@
     gap: 15px;
 }
 
+.navbar .actionButtons{
+    margin-left: 50px;
+}
+
+.navbar .actionButtons .logedOutBtns button,
 .navbar .actionButtons .loggedInBtns button{
+    border-radius: 2px;
     background-color: rgb(224, 231, 231);
+}
+
+.navbar .actionButtons .logedOutBtns button.active{
+    color: white;
+    background-color: black;
 }

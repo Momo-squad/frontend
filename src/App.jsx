@@ -20,6 +20,7 @@ import {Dashboard} from "./dashboard/dashboard"
 
 //importing dashboard componetns
 import { Login } from './Routes/login'
+import { Signup } from './Routes/signup'
 import { UserSidebar } from './dashboard/user-dashboard/components/sidebar'
 
 import UserHome from './dashboard/user-dashboard/components/home'
@@ -37,7 +38,6 @@ function App() {
   const [user, setUser] = useState({
     email: "",
     password: "",  
-    role: "user",
 });
 
   return (
@@ -49,7 +49,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Forum />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<h1>Signup</h1>} />
+            <Route path="/signup" element={<Signup />} />
             {/* list out all possible dashboard pages */}
             {/* while rendering those pages component we can
                 individually check if it matched for that role

@@ -2,7 +2,7 @@
     flex: 1;
     margin-top: 70px;
     min-width: 350px;
-    height: 200vh;
+    height: max-content;
     overflow-x: hidden;
     border-radius: 15px;
     /* box-shadow: 0 2.5px 5px #eeee; */
@@ -135,7 +135,7 @@
 
 .post-data-container .author-keywords .keyword{
     padding: 2px 7px;
-    background-color: azure;
+    background-color: #e5ecef;
 }
 
 .post-data-container .author-post{
@@ -156,8 +156,8 @@
 }
 
 .post-data-container .author-post .author-post-image img{
-    max-width: 400px;
-    height: 300px;
+    max-width: 80%;
+    height: 65%;
 }
 
 .post-data-container .below-posts{
@@ -271,7 +271,12 @@
     gap: 10px;
 }
 
+.comment-box .comments .comment:last-child{
+    border-bottom: none;
+}
 .comment-box .comments .comment{
+    border-bottom: 1px solid #cccc;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -284,4 +289,30 @@
 .comment-box .comments .comment .commenter-img img{
     width: 40px;
     height: 40px;
+}
+
+.comment-box .comments .comment .text{
+    margin-left: 5px;
+}
+
+.comment-box .comments .comment p.commenter-name{
+    margin-bottom: 0;
+}
+
+.comment-box .comments .comment p.description{
+    margin-top: 0.2em;
+}
+
+@media only screen and (max-width: 600px) {
+    .post-data-container .author-post .author-post-image img{
+        max-width: 300px;
+        max-height: 200px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .post-data-container .author-post .author-post-image img{
+        max-width: 250px;
+        max-height: 150px;
+    }
 }

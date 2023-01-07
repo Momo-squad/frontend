@@ -20,7 +20,7 @@ const UserHome = () => {
 
     console.log({prev: userHomeData})
 
-    if (userHomeData === {} || userHomeData == null){
+    if (userHomeData == {} || userHomeData == null){
         fetchData(setUserHomeData);
     }
     return(

@@ -25,7 +25,7 @@ export const Sidebar = () => {
                     <span>
                         <span className="following-posts-badge-container">
                             Following 
-                            <span class="badge text-bg-secondary">{newFollowingPosts}</span></span>
+                            <span className="badge text-bg-secondary">{newFollowingPosts}</span></span>
                         <small className="text-muted">Explored your favourites</small>
                     </span>
                 </button>

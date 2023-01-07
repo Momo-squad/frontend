@@ -1,8 +1,10 @@
 import { useState } from "react"
 import "../styles/Navbar.css"
+import { useNavigate } from "react-router-dom"
 
 export const Navbar = () => {
-    const [isLoggedIn, setLoggedStatus] = useState(false)
+    const navigate = useNavigate()
+    const [isLoggedIn, setLoggedStatus] = useState(true)
     return (
         <>
         <div className="navbar">
@@ -11,7 +13,8 @@ export const Navbar = () => {
             </div>
 
             <div className="center nav nav-pills">
-                <button
+            <div className="left">
+            <button
                 className="items nav-link active"
                 data-bs-toggle="tab"
                 data-bs-target="#nav-home"
@@ -39,6 +42,7 @@ export const Navbar = () => {
                 role="tab">
                     <i className="bi bi-box-seam"></i>
                 </button>
+            </div>
 
             <div className="searchBar">
                 <input
@@ -50,15 +54,19 @@ export const Navbar = () => {
                 {isLoggedIn && 
                 <div className="logedOutBtns">
                     <button 
+                    onClick={() => navigate("/login")}
                     className="login active">
-                    Signup
+                    Login
                     </button>
-                    <button className="signup">
+                    <button
+                    onClick={() => navigate("/signup")}
+                    className="signup">
                     Signup
                     </button>
                 </div>
                 }
                 
+                {!isLoggedIn &&
                 <div className="loggedInBtns">
                     <button className="chat">
                         <i className="bi bi-chat-left-dots-fill"></i>
@@ -74,6 +82,7 @@ export const Navbar = () => {
                         <i className="bi bi-person-circle"></i>
                     </button>
                 </div>
+            }
             </div>
             </div>
         </div>
