@@ -1,5 +1,224 @@
 .dashboard-home{
+    padding-right: 20px;
     width: 100%;
-    height: 100%;
-    background-color:#eef2f7;
+    height: calc(100vh - 90px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.dashboard-home div.left{
+    flex: 3;
+    min-width: 70%;
+}
+
+.dashboard-home div.right{
+    flex: 1;
+    min-width: 300px;
+}
+
+.left .alert-system{
+    padding: 10px 15px;
+    width: inherit;
+    height: max-content;
+    box-shadow: 0 2.5px 5px #dddd;
+    background-color: white;
+}
+
+.internal-div-headers{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.alert-system .alerts{
+    width: 100%;
+    max-width: inherit;
+    overflow-x: auto;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0 20px;
+}
+
+.alert-system .alerts .alert{
+    min-width: 350px;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid #cccc;
+}
+
+.alert-system .alerts .alert .alert-header{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.alert-system .alerts .alert .alert-header p{
+    margin: 0;
+}
+
+
+.alert-system .alerts .alert .alert-description{
+    font-size: 15px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+.alert-system .alerts .alert .action-btns{
+    margin-top: 5px;
+    width: 100%;
+    text-align: right;
+}
+
+.alert-system .alerts .alert .action-btns button{
+    font-size: 15px;
+    padding: 5px 20px;
+    border: 1px solid #017065;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #009688;
+}
+
+
+/* ========================================= */
+/* css for right side */
+
+.dashboard-home .right{
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.right .weather-container{
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: 0 2.5px 5px #dddd;
+}
+.right .weather-container .img-cotainer div{
+    color: white;
+    position: absolute;
+    display: flex;
+    z-index: 99999;
+
+}
+.right .weather-container .img-cotainer div:first-child{
+    font-size: 18px;
+    font-weight: 500;
+    top: 15px;
+    left: 15px;
+    flex-direction: column;
+}
+
+.right .weather-container .img-cotainer div:first-child span.day{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: rgb(237, 237, 237);
+}
+
+.right .weather-container .img-cotainer div:last-child{
+    font-size: 25px;
+    font-weight: 600;
+    flex-direction: row;
+    top: 70px;
+    left: 15px;
+}
+
+.right .weather-container .img-cotainer,
+.right .weather-container .img-cotainer img{
+    position: relative;
+    width: 300px;
+    height: 150px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.right .weather-container .img-cotainer::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 300px;
+    height: 150px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+.right .weather-container .forecast-container{
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.weather-container .forecast-container div.item{
+    padding: 7px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #cccc;
+}
+
+.weather-container .forecast-container div.item:last-child{
+    border: none;
+}
+
+.weather-container .forecast-container div.item .day{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.weather-container .forecast-container div.item .temperature{
+    display: flex;
+    gap: 10px;
+}
+
+.weather-container .forecast-container div.item .temperature span:first-child{
+    font-weight: 500;
+}
+
+/* ==================================================== */
+/* news css goes here */
+
+.dashboard-home .news-container{
+    margin-top: 20px;
+    padding: 10px 10px;
+    width: 100%;
+    height: max-content;
+    box-shadow: 0 2.5px 5px #dddd;
+    background-color: white;
+}
+
+.dashboard-home .news-container .scrollable-div{
+    height: max-content;
+    max-height: 270px;
+    overflow-y: auto;
+}
+
+.dashboard-home .news-container ul{
+    margin-top: 10px;
+}
+
+.dashboard-home .news-container ul p{
+    margin: 0;
+    font-size: 15px;
+}
+@media only screen and (max-width: 900px) {
+    .dashboard-home div.left{
+        width: 100%;
+    }
+    .dashboard-home div.right{
+        min-width: 100%;
+    }
 }

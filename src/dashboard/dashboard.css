@@ -17,6 +17,7 @@
     width: calc(100% - 250px);
     height: 100vh;
     max-height: 100vh;
+    background-color:#eef2f7;
 }
 
 .dashboard .main label.content-header{

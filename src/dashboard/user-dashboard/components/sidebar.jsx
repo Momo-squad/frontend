@@ -58,10 +58,23 @@ export const UserSidebar = ({active}) => {
                 </button>
 
                 <label htmlFor="#" className="label">Account</label>
-                <button className="item profile" onClick={() => Navigate("/dashboard/profile")}>
-                    <i className="bi bi-person"></i>
-                    Edit Profle
-                </button>
+                <div className="dropdown">
+                    <button
+                    data-bs-toggle="dropdown"
+                    className="item profile">
+                        <i className="bi bi-gear"></i>
+                        Settings
+                    </button>
+                    <ul className="dropdown-menu">
+                        <li><button
+                        className="dropdown-item"
+                        onClick={() => Navigate("/dashboard/profile")}>
+                            Edit profile
+                        </button></li>
+                        <li><a className="dropdown-item" href="#">Another action</a></li>
+                        <li><a className="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         </>
