@@ -11,6 +11,7 @@ const handlePostsFetch = () => {
 export const Feed = () => {
     const [following, setFollowing] = useState(false);
     const hasImage = true;
+    const numImages = 2
     const postUpvoteCount = 10;
 
     const handleFollow = () => {
@@ -182,10 +183,12 @@ export const Feed = () => {
                                 Accusamus ducimus sequi earum impedit.
                             </p>
                             {
-                                hasImage === false
-                                ? <></>
-                                : 
-                                <div id="postImagesCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel">
+                                hasImage === false ? <></>
+                                : (numImages == 1) ?  
+                                <div className="author-post-image">
+                                    <img src="https://diaryofdennis.files.wordpress.com/2015/08/random-plant-photo.jpg" alt="image" />
+                                </div>
+                                : <div id="postImagesCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel">
                                     <div className="carousel-inner">
                                         <div className="author-post-image carousel-item active">
                                             <img className="d-block w-100" src="https://diaryofdennis.files.wordpress.com/2015/08/random-plant-photo.jpg" alt="image" />
