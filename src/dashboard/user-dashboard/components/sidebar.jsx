@@ -14,15 +14,15 @@ export const UserSidebar = ({active}) => {
                 <label htmlFor="#" className="label">Reports</label>
                 <button className="item home" onClick={() => Navigate("/dashboard")}>
                     <i className="bi bi-box-seam"></i>
-                    Dashboard
+                    <p>Dashboard</p>
                 </button>
                 <button className="item operations" onClick={() => Navigate("/dashboard/operations")}>
                     <i className="bi bi-menu-up"></i>
-                    Operations
+                    <p>Operations</p>
                 </button>
                 <button className="item sensors" onClick={() => Navigate("/dashboard/sensors")}>
                     <i className="bi bi-cpu"></i>
-                    Sensors
+                    <p>Sensors</p>
                 </button>
 
                 <button
@@ -31,30 +31,30 @@ export const UserSidebar = ({active}) => {
                 data-bs-target="#insightsCollapse" 
                 onClick={() => Navigate("/dashboard/insights")}>
                     <i className="bi bi-bar-chart"></i>
-                    Insights
+                    <p>Insights</p>
                 </button>
 
                 {/* nested button for insights page */}
                 <div className="collapse multi-collapse" id="insightsCollapse">
                     <button className="item reports" onClick={() => Navigate("/dashboard/insights/reports")}>
-                        <i className="bi bi-cart"></i>
-                        Reports
+                        <i className="bi bi-clipboard2-data"></i>
+                        <p>Reports</p>
                     </button>
                 </div>
 
                 <button className="item sell" onClick={() => Navigate("/dashboard/sell")}>
                     <i className="bi bi-cart"></i>
-                    P2P
+                    <p>P2P</p>
                 </button>
                 <button className="item disease mb-5" onClick={() => Navigate("/dashboard/disease")}>
                     <i className="bi bi-bug"></i>
-                    Disease
+                    <p>Disease</p>
                 </button>
 
                 <label htmlFor="#" className="label">Setup</label>
                 <button className="item setup mb-4" onClick={() => Navigate("/dashboard/setup")}>
                     <i className="bi bi-house-add"></i>
-                    Manage
+                    <p>Manage</p>
                 </button>
 
                 <label htmlFor="#" className="label">Account</label>
@@ -63,7 +63,7 @@ export const UserSidebar = ({active}) => {
                     data-bs-toggle="dropdown"
                     className="item profile">
                         <i className="bi bi-gear"></i>
-                        Settings
+                        <p>Settings</p>
                     </button>
                     <ul className="dropdown-menu">
                         <li><button

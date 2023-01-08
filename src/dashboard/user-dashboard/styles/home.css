@@ -1,7 +1,7 @@
 .dashboard-home{
     padding-right: 20px;
     width: 100%;
-    height: calc(100vh - 90px);
+    height: max-content;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -22,6 +22,7 @@
     padding: 10px 15px;
     width: inherit;
     height: max-content;
+    border: 1px solid #dddd;
     box-shadow: 0 2.5px 5px #dddd;
     background-color: white;
 }
@@ -92,8 +93,10 @@
 .dashboard-home .right{
     width: max-content;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start;
+    gap: 20px;
 }
 
 .right .weather-container{
@@ -158,6 +161,7 @@
     display: flex;
     flex-direction: column;
     background-color: white;
+    border-bottom: 1px solid #dddd;
 }
 
 .weather-container .forecast-container div.item{
@@ -192,12 +196,12 @@
 /* news css goes here */
 
 .dashboard-home .news-container{
-    margin-top: 20px;
     padding: 10px 10px;
-    width: 100%;
+    width: 300px;
     height: max-content;
     box-shadow: 0 2.5px 5px #dddd;
     background-color: white;
+    border: 1px solid #dddd;
 }
 
 .dashboard-home .news-container .scrollable-div{
