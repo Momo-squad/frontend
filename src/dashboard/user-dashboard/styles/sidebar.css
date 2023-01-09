@@ -127,23 +127,23 @@
 }
 
 /* width */
-::-webkit-scrollbar {
+.sidebar::-webkit-scrollbar {
     border-radius: 5px;
     width: 4px;
     display: none !important;
   }
   
   /* Track */
-  ::-webkit-scrollbar-track {
+.sidebar::-webkit-scrollbar-track {
     background: #f1f1f1;
   }
   
   /* Handle */
-  ::-webkit-scrollbar-thumb {
+.sidebar::-webkit-scrollbar-thumb {
     background: rgba(202, 202, 202, 0.8);
   }
   
   /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+.sidebar::-webkit-scrollbar-thumb:hover {
     background: rgb(202, 202, 202);
   }

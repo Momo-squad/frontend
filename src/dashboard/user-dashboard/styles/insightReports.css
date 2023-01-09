@@ -1,0 +1,101 @@
+.insight-reports-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.insight-reports-container .options{
+    width: 100%;
+    height: 70px;
+    background-color: antiquewhite;
+}
+
+.insight-reports-container .reports-list{
+    position: relative;
+    margin-top: 2vh;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.reports-list .reports .report,
+.reports-list .report-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #dddd;
+    box-shadow: 0 2.5px 5px #dddd;
+}
+
+.reports-list .reports .report div.item,
+.reports-list .report-header span.th{
+    text-align: center;
+    width: 20%;
+}
+
+.reports-list .report-header span.th{
+    font-weight: 500;
+}
+
+.reports-list .reports .report div.item:first-child,
+.reports-list .report-header span.th:first-child{
+    width: 10% !important;
+}
+
+.reports-list .reports .report div.item:nth-child(2),
+.reports-list .report-header span.th:nth-child(2){
+    white-space: nowrap;
+    width: 15%;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+/* =============================================== */
+/* Report lists css goes here */
+
+.reports-list .reports{
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.reports-list .reports .report{
+    width: 100%;
+    box-shadow: none;
+}
+
+.reports-list .reports .report div.item:not(:last-child){
+    border-right: 1px solid #dddd;
+}
+
+.reports-list .reports .report .action-btns{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.reports-list .reports .report .action-btns button{
+    padding: 2px 10px;
+    width: max-content;
+    border: 1px solid #cccc;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.reports-list .reports .report .action-btns button:focus,
+.reports-list .reports .report .action-btns button:active,
+.reports-list .reports .report .action-btns button:hover{
+    color: white;
+    background-color: black;
+}
