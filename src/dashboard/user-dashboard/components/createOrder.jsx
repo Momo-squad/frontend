@@ -53,6 +53,7 @@ export default function CreateOrder() {
     const order = {
       product_id: 1,
       created_date: new Date(),
+      created_by: "",
       product: product,
       quantity: quantity,
       price_per: pricePer,
