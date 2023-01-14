@@ -39,6 +39,7 @@ import Profile from './dashboard/user-dashboard/components/profile'
 // const Insights = lazy(() => import('./dashboard/user-dashboard/components/insights'));
 // const InsightReports = lazy(() => import('./dashboard/user-dashboard/components/insightReports'));
 
+
 function App() {
   const [user, setUser] = useState({
     email: "",
@@ -61,6 +62,7 @@ function App() {
                 if yes do shit
                 if no Page does not exist!!!!
              */}
+
             <Route
               path="/dashboard" 
               element={

@@ -117,6 +117,9 @@ div.login-form-main-wrapper {
   }
   
   button.submit-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white !important;
     background-color: black !important;
     border: none;
@@ -126,6 +129,7 @@ div.login-form-main-wrapper {
     margin-top: 10px;
     font-size: 15px;
     cursor: pointer;
+    text-align: center;
   }
   
   button.submit-btn:hover {

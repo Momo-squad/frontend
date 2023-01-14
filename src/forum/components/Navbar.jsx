@@ -19,7 +19,7 @@ export const Navbar = () => {
                 data-bs-toggle="tab"
                 data-bs-target="#nav-home"
                 role="tab">
-                    <i className="bi bi-house-door-fill"></i>
+                    <i className="bi bi-house-door"></i>
                 </button>
                 <button
                 className="items nav-link"

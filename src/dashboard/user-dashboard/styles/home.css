@@ -155,6 +155,12 @@
     z-index: 9999;
 }
 
+.right .weather-container .img-cotainer .phrase{
+    font-weight: 500;
+    bottom: 18px;
+    font-size: 16px;
+    left: 18px;
+}
 .right .weather-container .forecast-container{
     padding: 10px 20px;
     width: 100%;
@@ -226,3 +232,10 @@
         min-width: 100%;
     }
 }
+
+/* width */
+.alerts::-webkit-scrollbar {
+    border-radius: 5px;
+    width: 4px;
+    height: 10px;
+  }

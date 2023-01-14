@@ -1,6 +1,7 @@
 // import styles
 import "./dashboard.css"
 
+
 export const Dashboard = ({sidebar, component}) => {
     return(
         <>

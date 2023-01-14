@@ -1,10 +1,114 @@
-.forum .farmap-profile{
+.forum .profile-section{
+    padding: 0 10%;
     width: 100%;
-    height: 80vh;
+    min-height: calc(100vh - 70px);
+    height: max-content;
+    background-color: #f1f1f3;
 }
 
-.forum .profile{
+
+.forum .signup-form-container form{
+    display: flex;
+    gap: 30px;
+}
+.forum .profile-section .Toastify__toast{
+    margin-top: 80px;
+}
+.forum .profile-container{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4em;
     width: 100%;
-    height: 100%;
-    background-color: aqua;
+    height: max-content;
+}
+
+.profile-container .my-info{
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+    height: max-content;
+}
+
+.profile-container .my-info .my-profile{
+    width: 100%;
+    height: 250px;
+    background-color: antiquewhite;
+}
+
+.profile-container .my-info .my-friends-list{
+    width: 100%;
+    height: 350px;
+    background-color: antiquewhite;
+}
+
+.profile-container .details{
+    width: 100%;
+    flex: 3;
+}
+
+.profile-container .details label.internal-div-header{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.profile-container .details nav{
+    margin-bottom: 20px;
+}
+.profile-container .details nav button{
+    padding: 10px 20px;
+}
+
+.feed-posts .post.my-profile-post{
+    width: auto;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    background-color: white;
+    padding: 30px 0;
+}
+
+.details .post{
+    width: inherit;
+}
+
+
+.profile-container .details .post .author-post{
+    width: inherit;
+}
+
+.author-post-image{
+    width: 300px !important;
+    height: max-content !important;
+}
+
+@media only screen and (max-width: 1100px) {
+    .forum .signup-form-container form{
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .forum .profile-section{
+        padding: 40px 20px;
+    }
+    .forum .profile-container{
+        flex-direction: column !important;
+    }
+    .profile-container .my-info{
+        min-width: 100%;
+        width: 100% !important;
+    }
+    .profile-container .my-info .my-friends-list{
+        display: none !important;
+    }
+    .profile-container .my-info{
+        position: relative;
+        top: 0;
+    }
 }

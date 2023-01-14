@@ -27,11 +27,11 @@ export const Forum = () => {
                     <FarmDisplay />
                 </div>
 
-                <div className="tab-pane fade show" id="nav-market" role="tabpanel" tabIndex="0">This is Market Stats Tab</div>
-                <div className="tab-pane fade show" id="nav-dashboard" role="tabpanel" tabIndex="0">This is Dashboard tab</div>
+                <div className="tab-pane fade" id="nav-market" role="tabpanel" tabIndex="0">This is Market Stats Tab</div>
+                <div className="tab-pane fade" id="nav-dashboard" role="tabpanel" tabIndex="0">This is Dashboard tab</div>
                 
                 <div
-                className="tab-pane fade show"
+                className="tab-pane fade"
                 id="farmap-profile"
                 role="tabpanel"
                 tabIndex="0">

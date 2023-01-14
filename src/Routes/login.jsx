@@ -6,15 +6,19 @@ import { useNavigate } from "react-router-dom";
 //immportin style
 import "./login.css";
 
+import { Loading } from "./loading";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import config from "../config";
+import {config} from "../config";
+import { useState } from "react";
 
 export const Login = () => {
   let navigate = useNavigate();
 
   const [user, setUser] = useContext(UserContext);
+  const [loginStatus, setLoginStatus] = useState(false)
 
   // initially set the role to farmer (user)
   if (!user.role) {
@@ -24,14 +28,14 @@ export const Login = () => {
   //fetch request on datase and check if user true or not (inside handle change)
   //if yes redirect to dasboard
   const handleLogin = async (event) => {
+    setLoginStatus(true)
     event.preventDefault();
 
-    console.log(user);
-
     if (!user.email || !user.password) {
+      setLoginStatus(false)
       return toast.error("All fields are required.");
     }
-
+    
     let res = await fetch(`${config.API_URL}/auth/login`, {
       method: "POST",
       headers: {
@@ -47,12 +51,14 @@ export const Login = () => {
     let data = await res.json();
 
     if (data.error || data.success === false) {
+      setLoginStatus(false)
       return toast.error(data.error);
     }
 
     data.token && localStorage.setItem("token", `Bearer ${data.token}`);
 
     data.success && toast.success(data.message);
+    setLoginStatus(true);
 
     setTimeout(() => {
       navigate("/dashboard");
@@ -86,8 +92,10 @@ export const Login = () => {
               <option value="seller">Seller</option>
             </select>
 
-            <button className="submit-btn" type="submit">
-              Login
+            <button
+            className="submit-btn"
+            type="submit">
+              {loginStatus === false ? "Login": <Loading />}
             </button>
           </form>
           <div className="signup-div">

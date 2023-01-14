@@ -52,9 +52,10 @@
 }
 .navbar .actionButtons button.active,
 .navbar .center button.active{
-    color: white;
-    border: 1px solid #017368;
-    background-color: #00897b;
+    color: white !important;
+    border: 1px solid #017368 !important;
+    background-color: #00897b !important;
+    transition: none !important;
 }
 
 .navbar .searchBar{
@@ -68,12 +69,17 @@
     text-indent: 15px;
     border: 1px solid #dddd;
     border-radius: 5px;
-    background-color: rgb(226, 233, 235);
+    background-color: #f3f3f3;
 }
 
 .navbar .actionButtons .loggedInBtns button{
     border: none;
-    color: black !important;
+    color: black;
+}
+
+.navbar .actionButtons .loggedInBtns button.show{
+    color: white;
+    background-color: rgba(69, 90, 100) !important;
 }
 .navbar .actionButtons .loggedInBtns,
 .navbar .actionButtons .logedOutBtns{
@@ -101,7 +107,7 @@
 .navbar .actionButtons .logedOutBtns button,
 .navbar .actionButtons .loggedInBtns button{
     border-radius: 5px;
-    background-color: rgb(224, 231, 231);
+    background-color: #e8eaeb;
 }
 
 .navbar .actionButtons .logedOutBtns button{
