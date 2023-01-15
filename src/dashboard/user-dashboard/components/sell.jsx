@@ -21,8 +21,9 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 
 import { DataGrid, GridToolbarContainer, GridToolbarExport, GridActionsCellItem } from '@mui/x-data-grid';
 
-
-// valueOptions: ['Pending', 'Dispatched', 'Completed', 'Cancelled']
+// valueOptions: ['Pending', 'Completed', 'Cancelled']
+// use fetch to get rows data
+// these row data are generated when seller creates an order on his dashboard
 const initialRows = [
     {id: 1, order: 1, createdDate: "Jan 2022", customer: "Ganesh Rice Mill", 
     location: "Itahri", product: "Rice", price: 20, quantity: 150, amount: 20000, status: 'Pending'},

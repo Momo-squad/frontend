@@ -3,7 +3,7 @@ import sunnyDay from "../assets/sunny-day.png"
 import { useState, useContext, useCallback} from "react";
 import axios from "axios"
 
-import useGeoLocation from "./useGeoLocation";
+import useGeoLocation from "./useGeolocation";
 
  import { useQuery, useMutation, useQueryClient } from 'react-query';
 

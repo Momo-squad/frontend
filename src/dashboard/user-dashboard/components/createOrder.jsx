@@ -19,7 +19,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function CreateOrder() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const [quantity, setQuantity] = useState(0);
   const [pricePer, setPricePer] = useState(0);
@@ -46,7 +46,7 @@ export default function CreateOrder() {
     if(!product || !quantity || !pricePer){
       setQuantity(0)
       setPricePer(0)
-      toast.error("All fields are requires!")
+      toast.error("All fields are required!")
       return
     }
     

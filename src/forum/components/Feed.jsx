@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import "../styles/Feed.css"
-// import Button from 'react-bootstrap/Button';
-// import Modal from 'react-bootstrap/Modal';
+
+
+import CreatePost from "./createPost";
 
 import { useState } from "react"
 const handlePostsFetch = () => {
@@ -98,39 +99,9 @@ export const Feed = () => {
     }
 
     return (
-        <>
-        {/* Create post modal */}
-        <div className="modal fade" id="exampleModal" tabIndex="-1">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                    <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                        <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    <div className="modal-body">
-                        k cha hau
-                    </div>
-                    <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary">Save changes</button>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        
+        <> 
         <div className="feed">
-            <div className="create-post">
-                <span className="user-img">
-                    <img src="https://scontent-lcy1-2.xx.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=deXb1cmmirkAX9rGgbq&_nc_ht=scontent-lcy1-2.xx&oh=00_AfDN1X9pL9MdcIFm6ti4wjSxcyc_cW5dNh-TQKqL9PXnrA&oe=63BB9B2F" alt="pp" />
-                </span>
-                <span className="input-field">
-                    <input
-                    type="text" 
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                    placeholder="Share something new"/>
-                </span>
-            </div>
+            <CreatePost />
             
             <div className="feed-posts">
                 <div className="post" id="1">
@@ -150,7 +121,7 @@ export const Feed = () => {
                     <div className="post-data-container">
                         <div className="author">
                             <span className="author-img">
-                                <img src="https://scontent-lcy1-2.xx.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=deXb1cmmirkAX9rGgbq&_nc_ht=scontent-lcy1-2.xx&oh=00_AfDN1X9pL9MdcIFm6ti4wjSxcyc_cW5dNh-TQKqL9PXnrA&oe=63BB9B2F" alt="pp" />
+                                <img src="https://scontent.fbir4-1.fna.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=oCBoVqye2JgAX8NPx5a&_nc_ht=scontent.fbir4-1.fna&oh=00_AfAPk9Wa_8_6QhFbmOCt8UQ8o06_U6vBBlWE9_hs5Hlb4g&oe=63C778AF" alt="pp" />
                             </span>
                             <span>
                                 <p className="author-name">Bibek Shah</p>
@@ -228,7 +199,7 @@ export const Feed = () => {
                                     <div className="comment-box">
                                         <div className="create-comment-wrapper">
                                             <span className="author-img">
-                                                <img src="https://scontent-lcy1-2.xx.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=deXb1cmmirkAX9rGgbq&_nc_ht=scontent-lcy1-2.xx&oh=00_AfDN1X9pL9MdcIFm6ti4wjSxcyc_cW5dNh-TQKqL9PXnrA&oe=63BB9B2F" alt="person" />
+                                                <img src="https://scontent.fbir4-1.fna.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=oCBoVqye2JgAX8NPx5a&_nc_ht=scontent.fbir4-1.fna&oh=00_AfAPk9Wa_8_6QhFbmOCt8UQ8o06_U6vBBlWE9_hs5Hlb4g&oe=63C778AF" alt="person" />
                                             </span>
                                             <span className="create-comment">
                                                 <textarea placeholder="Write your comments here..."></textarea>
@@ -256,7 +227,7 @@ export const Feed = () => {
                                         <div className="comments">
                                             <div className="comment">
                                                 <span className="commenter-img">
-                                                    <img src="https://scontent-lcy1-2.xx.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=deXb1cmmirkAX9rGgbq&_nc_ht=scontent-lcy1-2.xx&oh=00_AfDN1X9pL9MdcIFm6ti4wjSxcyc_cW5dNh-TQKqL9PXnrA&oe=63BB9B2F" alt="person" />
+                                                    <img src="https://scontent.fbir4-1.fna.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=oCBoVqye2JgAX8NPx5a&_nc_ht=scontent.fbir4-1.fna&oh=00_AfAPk9Wa_8_6QhFbmOCt8UQ8o06_U6vBBlWE9_hs5Hlb4g&oe=63C778AF" alt="person" />
                                                 </span>
                                                 <span className="text">
                                                     <p className="commenter-name">Yaman Sarbariya</p>
@@ -267,7 +238,7 @@ export const Feed = () => {
 
                                             <div className="comment">
                                                 <span className="commenter-img">
-                                                    <img src="https://scontent-lcy1-2.xx.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=deXb1cmmirkAX9rGgbq&_nc_ht=scontent-lcy1-2.xx&oh=00_AfDN1X9pL9MdcIFm6ti4wjSxcyc_cW5dNh-TQKqL9PXnrA&oe=63BB9B2F" alt="person" />
+                                                    <img src="https://scontent.fbir4-1.fna.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=oCBoVqye2JgAX8NPx5a&_nc_ht=scontent.fbir4-1.fna&oh=00_AfAPk9Wa_8_6QhFbmOCt8UQ8o06_U6vBBlWE9_hs5Hlb4g&oe=63C778AF" alt="person" />
                                                 </span>
                                                 <span className="text">
                                                     <p className="commenter-name">Yaman Sarbariya</p>
@@ -300,7 +271,7 @@ export const Feed = () => {
                     <div className="post-data-container">
                         <div className="author">
                             <span className="author-img">
-                                <img src="https://scontent-lcy1-2.xx.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=deXb1cmmirkAX9rGgbq&_nc_ht=scontent-lcy1-2.xx&oh=00_AfDN1X9pL9MdcIFm6ti4wjSxcyc_cW5dNh-TQKqL9PXnrA&oe=63BB9B2F" alt="pp" />
+                                <img src="https://scontent.fbir4-1.fna.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=oCBoVqye2JgAX8NPx5a&_nc_ht=scontent.fbir4-1.fna&oh=00_AfAPk9Wa_8_6QhFbmOCt8UQ8o06_U6vBBlWE9_hs5Hlb4g&oe=63C778AF" alt="pp" />
                             </span>
                             <span>
                                 <p className="author-name">Bibek Shah</p>
@@ -361,7 +332,7 @@ export const Feed = () => {
                                     <div className="comment-box">
                                         <div className="create-comment-wrapper">
                                             <span className="author-img">
-                                                <img src="https://scontent-lcy1-2.xx.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=deXb1cmmirkAX9rGgbq&_nc_ht=scontent-lcy1-2.xx&oh=00_AfDN1X9pL9MdcIFm6ti4wjSxcyc_cW5dNh-TQKqL9PXnrA&oe=63BB9B2F" alt="person" />
+                                                <img src="https://scontent.fbir4-1.fna.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=oCBoVqye2JgAX8NPx5a&_nc_ht=scontent.fbir4-1.fna&oh=00_AfAPk9Wa_8_6QhFbmOCt8UQ8o06_U6vBBlWE9_hs5Hlb4g&oe=63C778AF" alt="person" />
                                             </span>
                                             <span className="create-comment">
                                                 <textarea placeholder="Write your comments here..."></textarea>
@@ -389,7 +360,7 @@ export const Feed = () => {
                                         <div className="comments">
                                             <div className="comment">
                                                 <span className="commenter-img">
-                                                    <img src="https://scontent-lcy1-2.xx.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=deXb1cmmirkAX9rGgbq&_nc_ht=scontent-lcy1-2.xx&oh=00_AfDN1X9pL9MdcIFm6ti4wjSxcyc_cW5dNh-TQKqL9PXnrA&oe=63BB9B2F" alt="person" />
+                                                    <img src="https://scontent.fbir4-1.fna.fbcdn.net/v/t39.30808-6/318499336_969462414459076_3592138521682688925_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=oCBoVqye2JgAX8NPx5a&_nc_ht=scontent.fbir4-1.fna&oh=00_AfAPk9Wa_8_6QhFbmOCt8UQ8o06_U6vBBlWE9_hs5Hlb4g&oe=63C778AF" alt="person" />
                                                 </span>
                                                 <span className="text">
                                                     <p className="commenter-name">Yaman Sarbariya</p>

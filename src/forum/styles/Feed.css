@@ -8,14 +8,15 @@
     /* background-color: white; */
 }
 
+.css-zw3mfo-MuiModal-root-MuiDialog-root{
+    z-index: 9999999 !important;
+}
+
 #nav-tabContent{
     position: relative;
     z-index: 9999;
 }
 
-.modal {
-    z-index: 999;
-}
 .feed .create-post{
     padding: 20px 15px 20px 20px;
     display: flex;
@@ -40,6 +41,7 @@
 }
 
 .feed .create-post .input-field input{
+    outline: none;
     border: 1px solid #cccc;
     border-radius: 5px;
     text-indent: 15px;
@@ -345,4 +347,34 @@
         max-width: 250px;
         max-height: 150px;
     }
+}
+
+.label{
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+textarea:not(.keywords) {
+    width: 100% !important;
+    border: none !important;
+    outline: none !important;
+  }
+
+.keywords{
+    background-color: #f9fbff;
+}
+
+.MuiTextField-root{
+    width: 100% !important;
+    margin-bottom: 20px !important;
+}
+
+.feed .Toastify__toast-container--top-right{
+    top: 5em !important;
+}
+
+.css-bdhsul-MuiTypography-root-MuiDialogTitle-root{
+    font-size: 30px !important;
+    font-weight: 600 !important;
 }
