@@ -260,7 +260,6 @@ const Sell = () => {
                     rowsPerPageOptions={[5]}
                     checkboxSelection
                     disableSelectionOnClick
-                    experimentalFeatures={{ newEditingApi: true }}
                     // loading={<Loading />}
                     components={{
                         Toolbar: CustomToolbar,

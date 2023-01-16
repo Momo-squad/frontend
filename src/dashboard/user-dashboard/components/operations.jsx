@@ -1,6 +1,11 @@
+import { LineChart } from 'react-chartkick'
+import 'chartkick/chart.js'
+
 const Operations = () => {
     return(
-        <>This is Operations page</>
+        <>
+        <h1>This is Operations page</h1>
+        </>
     )
 }
 
