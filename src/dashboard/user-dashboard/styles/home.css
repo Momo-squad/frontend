@@ -13,80 +13,80 @@
     min-width: 70%;
 }
 
+
 .dashboard-home div.right{
     flex: 1;
     min-width: 300px;
 }
+/* ========================================= */
+/* css for hihglights goes here */
 
-.left .alert-system{
-    padding: 10px 15px;
-    width: inherit;
-    height: max-content;
-    border: 1px solid #dddd;
-    box-shadow: 0 2.5px 5px #dddd;
-    background-color: white;
-}
-
-.internal-div-headers{
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.alert-system .alerts{
+.left .highlights-container{
+    margin-bottom: 20px;
+    padding: 10px 0;
     width: 100%;
-    max-width: inherit;
+    max-width: 100%;
     overflow-x: auto;
-    margin-top: 10px;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    gap: 0 20px;
+    flex-wrap: nowrap;
+    gap: 2em;
 }
 
-.alert-system .alerts .alert{
-    min-width: 350px;
-    padding: 10px 10px;
+.highlights-container .highlight{
+    width: 270px;
+    min-width: 270px;
+    padding: 0px 0 10px 0;
+    background-color: white;
+    border: 1px solid #dddd;
+    border-radius: 5px;
+    box-shadow: 0 2.5px 5px #eeee;
+}
+
+.highlight .header{
+    vertical-align: middle;
+    padding: 0.5em 1em;
+    width: 100%;
+    border-bottom: 1px solid #eeee;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: aliceblue;
+}
+
+.highlight.header.customers{
+    background-color: #c8e6c9;
+}
+
+.highlight.header.revenue{
+    background-color: #bbdefb;
+}
+
+.highlight.header.orders{
+    background-color: #ffcc80;
+}
+
+.highlight .content{
+    padding: 0.5em 1em;
+    margin-top: 0.5em;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    border: 1px solid #cccc;
+    gap: 0.2em;
 }
-
-.alert-system .alerts .alert .alert-header{
+.highlight .content span:first-child p{
+    margin: 0 !important;
+}
+.highlight .content span:first-child{
     display: flex;
     flex-direction: row;
-    gap: 10px;
     align-items: center;
-}
-
-.alert-system .alerts .alert .alert-header p{
-    margin: 0;
-}
-
-
-.alert-system .alerts .alert .alert-description{
-    font-size: 15px;
-    margin-top: 10px;
+    gap: 0.2em;
+    font-size: 18px;
     font-weight: 500;
 }
-.alert-system .alerts .alert .action-btns{
-    margin-top: 5px;
-    width: 100%;
-    text-align: right;
+.highlight .content span:first-child small{
+    font-size: 16px;
+    font-weight: 400;
 }
-
-.alert-system .alerts .alert .action-btns button{
-    font-size: 15px;
-    padding: 5px 20px;
-    border: 1px solid #017065;
-    outline: none;
-    border-radius: 5px;
-    color: white;
-    background-color: #009688;
-}
-
-
 /* ========================================= */
 /* css for right side */
 
@@ -99,104 +99,6 @@
     gap: 20px;
 }
 
-.right .weather-container{
-    width: max-content;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    box-shadow: 0 2.5px 5px #dddd;
-}
-.right .weather-container .img-cotainer div{
-    color: white;
-    position: absolute;
-    display: flex;
-    z-index: 99999;
-
-}
-.right .weather-container .img-cotainer div:first-child{
-    font-size: 18px;
-    font-weight: 500;
-    top: 15px;
-    left: 15px;
-    flex-direction: column;
-}
-
-.right .weather-container .img-cotainer div:first-child span.day{
-    font-size: 14px;
-    text-transform: uppercase;
-    color: rgb(237, 237, 237);
-}
-
-.right .weather-container .img-cotainer div:last-child{
-    font-size: 25px;
-    font-weight: 600;
-    flex-direction: row;
-    top: 70px;
-    left: 15px;
-}
-
-.right .weather-container .img-cotainer,
-.right .weather-container .img-cotainer img{
-    position: relative;
-    width: 300px;
-    height: 150px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
-.right .weather-container .img-cotainer::before{
-    position: absolute;
-    content: "";
-    top: 0;
-    width: 300px;
-    height: 150px;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.2);
-    z-index: 9999;
-}
-
-.right .weather-container .img-cotainer .phrase{
-    font-weight: 500;
-    bottom: 18px;
-    font-size: 16px;
-    left: 18px;
-}
-.right .weather-container .forecast-container{
-    padding: 10px 20px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border-bottom: 1px solid #dddd;
-}
-
-.weather-container .forecast-container div.item{
-    padding: 7px 0;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #cccc;
-}
-
-.weather-container .forecast-container div.item:last-child{
-    border: none;
-}
-
-.weather-container .forecast-container div.item .day{
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.weather-container .forecast-container div.item .temperature{
-    display: flex;
-    gap: 10px;
-}
-
-.weather-container .forecast-container div.item .temperature span:first-child{
-    font-weight: 500;
-}
 
 /* ==================================================== */
 /* news css goes here */
@@ -224,6 +126,7 @@
     margin: 0;
     font-size: 15px;
 }
+
 @media only screen and (max-width: 900px) {
     .dashboard-home div.left{
         width: 100%;
@@ -232,10 +135,3 @@
         min-width: 100%;
     }
 }
-
-/* width */
-.alerts::-webkit-scrollbar {
-    border-radius: 5px;
-    width: 4px;
-    height: 10px;
-  }
