@@ -5,7 +5,9 @@ const InsightReports = () => {
         <>
         <label htmlFor="#" className="content-header">Past Reports</label>
         <div className="insight-reports-container">
-            <div className="options"></div>
+            <div className="options">
+                This is options menu
+            </div>
 
             <div className="reports-list">
                 <div className="report-header thead">
