@@ -52,6 +52,7 @@ export const Navbar = () => {
               data-bs-toggle="tab"
               data-bs-target="#nav-dashboard"
               role="tab"
+              onClick={() => navigate("/dashboard")}
             >
               <i className="bi bi-box-seam"></i>
             </button>
