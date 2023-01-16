@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import "../styles/Feed.css"
 
-
 import CreatePost from "./createPost";
 
 import { useState } from "react"

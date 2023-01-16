@@ -117,3 +117,19 @@
     color: black;
     background-color: #cccc;
 }
+
+
+.charts-container{
+    padding-right: 15px;
+}
+.charts-container div{
+    background-color: white !important;
+    padding: 15px 15px !important;
+    height: 500px !important;
+    margin-bottom: 40px;
+}
+
+.charts-container p{
+    font-size: 18px;
+    font-weight: 600;
+}
