@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { UserContext } from "../context/userContext";
 
 import { useNavigate } from "react-router-dom";
@@ -11,15 +11,16 @@ import { Loading } from "./loading";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import {config} from "../config";
+import { config } from "../config";
 import { useState } from "react";
 
 export const Login = () => {
   let navigate = useNavigate();
 
-  const [user, setUser] = useContext(UserContext);
-  const [loginStatus, setLoginStatus] = useState(false)
+  const { user, setUser } = useContext(UserContext);
 
+  const [loginStatus, setLoginStatus] = useState(false);
+  
   // initially set the role to farmer (user)
   if (!user.role) {
     user.role = "user";
@@ -28,14 +29,14 @@ export const Login = () => {
   //fetch request on datase and check if user true or not (inside handle change)
   //if yes redirect to dasboard
   const handleLogin = async (event) => {
-    setLoginStatus(true)
+    setLoginStatus(true);
     event.preventDefault();
 
     if (!user.email || !user.password) {
-      setLoginStatus(false)
+      setLoginStatus(false);
       return toast.error("All fields are required.");
     }
-    
+
     let res = await fetch(`${config.API_URL}/auth/login`, {
       method: "POST",
       headers: {
@@ -51,7 +52,8 @@ export const Login = () => {
     let data = await res.json();
 
     if (data.error || data.success === false) {
-      setLoginStatus(false)
+      setLoginStatus(false);
+      setUser({});
       return toast.error(data.error);
     }
 
@@ -59,6 +61,14 @@ export const Login = () => {
 
     data.success && toast.success(data.message);
     setLoginStatus(true);
+
+    localStorage.setItem("userInfo", JSON.stringify(data.data));
+    let userInfo = localStorage.getItem("userInfo");
+    if (!userInfo) {
+      userInfo = {};
+    }
+    console.log(userInfo);
+    setUser(JSON.parse(userInfo));
 
     setTimeout(() => {
       navigate("/dashboard");
@@ -92,10 +102,8 @@ export const Login = () => {
               <option value="seller">Seller</option>
             </select>
 
-            <button
-            className="submit-btn"
-            type="submit">
-              {loginStatus === false ? "Login": <Loading />}
+            <button className="submit-btn" type="submit">
+              {loginStatus === false ? "Login" : <Loading />}
             </button>
           </form>
           <div className="signup-div">
