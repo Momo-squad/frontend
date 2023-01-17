@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/Navbar.css";
 import { useNavigate } from "react-router-dom";
+import Notification from "./Notification";
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -71,7 +72,7 @@ export const Navbar = () => {
                 >
                   Login
                 </button>
-                <button onClick={() => navigate("/signup")} className="signup">
+                <button onClick={() => window.open("/navigate")} className="signup">
                   Signup
                 </button>
               </div>
@@ -90,8 +91,12 @@ export const Navbar = () => {
                   <button data-bs-toggle="dropdown" className="notification">
                     <i className="bi bi-bell-fill"></i>
                   </button>
-                  <div className="dropdown-menu">
-                    this is notification dropdown
+                  <div className="dropdown-menu" style={{ overflowY: "scroll" }}>
+                    {[1,1,1,1,1,1,1,1,1,1,1].map(() => {
+                      return (
+                        <Notification />
+                      )
+                    })}
                   </div>
                 </div>
 

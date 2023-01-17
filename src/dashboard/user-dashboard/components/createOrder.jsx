@@ -18,15 +18,15 @@ import { useState } from 'react';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function CreateOrder() {
+import { config } from '../../../config';
+
+export default function CreateOrder({ fetchMyOrders }) {
   const [open, setOpen] = useState(false);
 
   const [quantity, setQuantity] = useState(0);
   const [pricePer, setPricePer] = useState(0);
   const [isOnline, setIsOnline] = useState(false)
   const [product, setProduct] = useState("")
-
-  const [order, setOrder] = useState(null)
 
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -39,7 +39,7 @@ export default function CreateOrder() {
     setOpen(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     // do sth here
 
@@ -49,24 +49,26 @@ export default function CreateOrder() {
       toast.error("All fields are required!")
       return
     }
-    
-    const order = {
-      product_id: "1",
-      created_date: new Date(),
-      created_by: "",
-      product: product,
-      quantity: quantity,
-      price_per: pricePer,
-      total_amount: String(quantity*pricePer),
-      isOnline: String(isOnline)
-    };
 
-    setOrder(order)
-    console.log(order)
+    const res = await fetch(`${config.API_URL}/user/create-order`, {
+      method: "POST",
+      headers: {
+        "authorization": localStorage.getItem("token"),
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify({ crop_name: product, quantity: +quantity, amount: +pricePer, status: isOnline })
+    })
 
+    const data = await res.json()
+
+    if(data.error || data.success === false) {
+      return toast.error(data.error)
+    }
+
+    toast.success(data.message)
+    fetchMyOrders()
     setQuantity(0)
     setPricePer(0)
-    toast.success("Created new order")
     setOpen(false);
   }
 

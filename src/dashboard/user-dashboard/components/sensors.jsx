@@ -13,7 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Sensors = () => {
     const { isLoading, error, data, isFetching } = useQuery('sensors-data', async() => {
         const data = JSON.stringify({
-            "query": "SELECT $id as ID, $ts as Timestamp, Temperature, Humidity, Moisture, Light FROM dtmi:x1ymgbguae:gqityf1uu WHERE WITHIN_WINDOW('2023-01-15T13:25:28.85Z/2023-01-15T16:11:20.698Z') AND $id='NodeMCU'"
+            "query": "SELECT $id as ID, $ts as Timestamp, Temperature, Humidity, Moisture, Light FROM dtmi:x1ymgbguae:gqityf1uu WHERE WITHIN_WINDOW('2023-01-17T05:25:28.85Z/2023-01-20T16:11:20.698Z') AND $id='NodeMCU'"
           });
     
         const res = await axios({
