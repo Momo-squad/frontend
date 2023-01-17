@@ -53,15 +53,15 @@
     background-color: aliceblue;
 }
 
-.highlight.header.customers{
+.highlight.customers .header{
     background-color: #c8e6c9;
 }
 
-.highlight.header.revenue{
+.highlight.revenue .header{
     background-color: #bbdefb;
 }
 
-.highlight.header.orders{
+.highlight.orders .header{
     background-color: #ffcc80;
 }
 

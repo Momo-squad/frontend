@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 3px dashed #cbd5e0;
   background-color: #edf2f7;
   min-width: 380px;
   min-height: 230px;
@@ -67,6 +66,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
+  padding: 10px;
+  border: 3px dashed #cbd5e0;
 }
 
 .file-card .img-container div{

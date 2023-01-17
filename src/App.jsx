@@ -43,7 +43,7 @@ function App() {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    let userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    let userInfo = localStorage.getItem("userInfo");
 
     if (!userInfo) {
       userInfo = {};

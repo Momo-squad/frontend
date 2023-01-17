@@ -35,34 +35,53 @@
 .reports-list .reports .report{
     padding: 10px 0;
     height: max-content;
-    display: flex;
-    flex-wrap: wrap;
+    width: max-content;
+    max-width: max-content;
+    overflow-x: auto;
+}
+
+.reports-list .report-header{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    max-width: max-content;
+    overflow-x: auto;
+    box-shadow: 0 2.5px 5px #dddd;
+    background-color: rgb(255, 255, 255);
+    font-weight: 500;
 }
 
 .reports-list .reports .report div.item,
 .reports-list .report-header span.th{
     text-align: center;
-    width: 20%;
-}
+    width: auto;
+    font-size: 15px;
 
-.reports-list .report-header span.th{
-    font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; 
 }
 
 .reports-list .reports .report div.item:first-child,
 .reports-list .report-header span.th:first-child{
-    width: 10% !important;
+    width: 100px !important;
 }
 
 .reports-list .reports .report div.item:nth-child(2),
 .reports-list .report-header span.th:nth-child(2){
-    white-space: nowrap;
-    width: 15%;
-    overflow: hidden;
-    text-overflow: ellipsis; 
+    width: 150px;
+}
+
+.reports-list .reports .report div.item:nth-child(3),
+.reports-list .report-header span.th:nth-child(3){
+    width: 200px;
+}
+
+.reports-list .reports .report div.item:nth-child(4),
+.reports-list .report-header span.th:nth-child(4){
+    width: 120px;
+}
+
+.reports-list .reports .report div.item:nth-child(5),
+.reports-list .report-header span.th:nth-child(5){
+    width: 250px;
 }
 
 /* =============================================== */
@@ -72,23 +91,16 @@
     display: flex;
     flex-direction: column;
     height: max-content;
-    gap: 5px;
     max-height: 70vh;
     overflow-y: auto;
 }
 
 .reports-list .reports .report{
-    width: 100%;
+    width: max-content;
     box-shadow: none;
-    border: 1px solid #dddd;
-    border-radius: 10px;
-    box-shadow: 0 2.5px 5px #dddd;
+    border-bottom: 1px solid #eeee;
     background-color: white;
-
-}
-
-.reports-list .reports .report div.item:not(:last-child){
-    border-right: 1px solid #dddd;
+    font-size: 15px;
 }
 
 .reports-list .reports .report .action-btns{
