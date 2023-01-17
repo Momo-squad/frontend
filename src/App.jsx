@@ -44,10 +44,12 @@ function App() {
 
   useEffect(() => {
     let userInfo = localStorage.getItem("userInfo");
-
+    
     if (!userInfo) {
       userInfo = {};
     }
+
+    userInfo = JSON.parse(userInfo)
     setUser(userInfo);
   }, []);
 

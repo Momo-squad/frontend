@@ -191,7 +191,7 @@ export const Feed = () => {
   return (
     <>
       <div className="feed">
-        <CreatePost />
+        <CreatePost fetchPost={fetchPost} />
 
         <div className="feed-posts">
           {isPostLoading ? <Loading /> : ""}

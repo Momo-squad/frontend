@@ -16,18 +16,19 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { useState, useRef, useLayoutEffect } from "react";
 import { UserContext } from "../../context/userContext";
+import { FeedContext } from "../../context/FeedContextProvider";
 import { useContext } from "react";
 import { config } from "../../config";
 const MIN_TEXTAREA_HEIGHT = 32;
 
-export default function CreatePost() {
+export default function CreatePost({ fetchPost }) {
   const [open, setOpen] = useState(false);
   const [postDescription, setPostDescription] = useState("");
   const [keywords, setKeywords] = useState("");
   const [image, setImage] = useState([]);
   const { user } = useContext(UserContext);
+  const { postType } = useContext(FeedContext);
 
-  const [post, setPost] = useState(null);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -66,7 +67,7 @@ export default function CreatePost() {
       .map((i) => i.trim())
       .filter((i) => i);
 
-      console.log(tags)
+    console.log(tags);
 
     formData.append("author_id", user._id);
     formData.append("question", postDescription);
@@ -91,6 +92,7 @@ export default function CreatePost() {
     }
 
     toast.success(data.message);
+    fetchPost(postType);
     setKeywords("");
     setPostDescription("");
     setImage([]);
