@@ -26,8 +26,8 @@ export const Feed = () => {
     setIsPostLoading(true);
     const res = await fetch(`${config.API_URL}/forum/posts/${type}`, {
       headers: {
-        "authorization": localStorage.getItem("token")
-      }
+        authorization: localStorage.getItem("token"),
+      },
     });
     const data = await res.json();
     setIsPostLoading(false);
@@ -73,7 +73,7 @@ export const Feed = () => {
     const downVoteElem = elem.parentElement.children[2];
     const downVoteIcon = downVoteElem.children[0];
 
-    if (!icon || !elem || !downVoteElem || !downVoteIcon) return
+    if (!icon || !elem || !downVoteElem || !downVoteIcon) return;
 
     const question_id = e.target.getAttribute("data-qid");
 
@@ -130,8 +130,9 @@ export const Feed = () => {
     const elem = e.target.parentElement;
     const upVoteElem = elem.parentElement.children[0];
     const upVoteIcon = upVoteElem.children[0];
+    console.log({upVoteElem, upVoteIcon,elem})
 
-    if (!icon || !elem || !downVoteElem || !downVoteIcon) return
+    if (!icon || !elem || !upVoteElem || !upVoteIcon) return;
 
     const question_id = e.target.getAttribute("data-qid");
 
