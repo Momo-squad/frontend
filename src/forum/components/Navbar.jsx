@@ -90,13 +90,13 @@ export const Navbar = () => {
                 <div className="dropdown">
                   <button data-bs-toggle="dropdown" className="notification">
                     <i className="bi bi-bell-fill"></i>
+                    <span class="position-absolute top-0 start-100 
+                    translate-middle badge rounded-pill bg-danger">
+                      9
+                    </span>
                   </button>
                   <div className="dropdown-menu" style={{ overflowY: "scroll" }}>
-                    {[1,1,1,1,1,1,1,1,1,1,1].map(() => {
-                      return (
                         <Notification />
-                      )
-                    })}
                   </div>
                 </div>
 

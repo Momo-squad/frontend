@@ -34,6 +34,7 @@ export const Login = () => {
 
     if (!user.email || !user.password) {
       setLoginStatus(false);
+      setUser({})
       return toast.error("All fields are required.");
     }
 

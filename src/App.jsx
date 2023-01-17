@@ -38,6 +38,11 @@ import Profile from "./dashboard/user-dashboard/components/profile";
 // const Sensors  = lazy(() => import('./dashboard/user-dashboard/components/sensors')) ;
 // const Insights = lazy(() => import('./dashboard/user-dashboard/components/insights'));
 // const InsightReports = lazy(() => import('./dashboard/user-dashboard/components/insightReports'));
+// const Operations = lazy(() => import('./dashboard/user-dashboard/components/operations'));
+// const Sell = lazy(() => import("./dashboard/user-dashboard/components/sell"));
+// const Disease = lazy(() => import('./dashboard/user-dashboard/components/disease'));
+// const Setup = lazy(() => import('./dashboard/user-dashboard/components/setup'));
+// const Profile = lazy(() => import('./dashboard/user-dashboard/components/profile'));
 
 function App() {
   const [user, setUser] = useState({});
@@ -47,10 +52,10 @@ function App() {
     
     if (!userInfo) {
       userInfo = {};
+    } else {
+      userInfo = JSON.parse(userInfo)
+      setUser(userInfo);
     }
-
-    userInfo = JSON.parse(userInfo)
-    setUser(userInfo);
   }, []);
 
   return (

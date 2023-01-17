@@ -4,8 +4,7 @@
     height: max-content;
     overflow-x: hidden;
     border-radius: 15px;
-    /* box-shadow: 0 2.5px 5px #eeee; */
-    /* background-color: white; */
+    box-shadow: 0 2.5px 5px #eeee;
 }
 
 .css-zw3mfo-MuiModal-root-MuiDialog-root{
@@ -46,7 +45,6 @@
     border-radius: 5px;
     text-indent: 15px;
 }
-
 
 /* ======================================= */
 /* Individual feed posts css goes here*/
@@ -258,7 +256,7 @@
 .comment-box .create-comment-wrapper textarea{
     resize: none;
     margin-left: 50px;
-    padding: 11px 70px 0 5px;
+    padding: 5px 70px 0 5px;
     border: none;
     outline: none;
     border-top-left-radius: 0px !important;
@@ -362,7 +360,7 @@ textarea:not(.keywords) {
   }
 
 .keywords{
-    background-color: #f9fbff;
+    background-color: #fcfeff;
 }
 
 .MuiTextField-root{

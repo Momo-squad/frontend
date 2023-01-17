@@ -104,19 +104,22 @@ export default function CreatePost({ fetchPost }) {
     <>
       <div className="create-post">
         <span className="user-img">
-          <img src={user.profile_pic} alt="pp" />
+          {
+            user.profile_pic? <img src={user.profile_pic} alt="pfp" />
+            : <img src="https://i.pinimg.com/originals/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg" alt="default pfp" />
+          }
+          
         </span>
         <span className="input-field">
           <input
             onClick={handleClickOpen}
             type="text"
             data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
             placeholder="Share something new"
           />
         </span>
         <Dialog fullScreen={fullScreen} open={open} onClose={handleClose}>
-          <DialogTitle>{"Create a new post"}</DialogTitle>
+          <DialogTitle>{"Create a new post.."}</DialogTitle>
           <DialogContent>
             <textarea
               ref={textAreaRef}
@@ -137,14 +140,6 @@ export default function CreatePost({ fetchPost }) {
               label="# followed by keyword"
               variant="outlined"
             />
-            {/* <textarea
-              className='keywords'
-              value={keywords} 
-              style={{
-                resize: "none"
-              }}
-              onChange={e => setKeywords(e.target.value)} 
-              placeholder='write keywords using # followed by keyword'/> */}
             <FileUpload image={image} setImage={setImage} />
           </DialogContent>
           <DialogActions>
@@ -152,7 +147,8 @@ export default function CreatePost({ fetchPost }) {
               Close
             </Button>
             <Button
-              className="btn bg-dark text-white px-4"
+              className="btn text-white px-4"
+              style={{background: "#282828"}}
               onClick={handleCreatePost}
               autoFocus
             >

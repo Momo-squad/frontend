@@ -95,11 +95,12 @@
 }
 
 .navbar .actionButtons .dropdown-menu.show{
+    padding: 0;
     box-sizing:content-box;
     margin-left: -140px; 
-    width: 300px;
-    height: 300px;
-    padding: 10px 15px;
+    width: 350px;
+    min-height: 300px;
+    max-height: 350px;
     border: 1px solid #dddd;
     box-shadow: 0 2.5px 5px #dddd;
 }
