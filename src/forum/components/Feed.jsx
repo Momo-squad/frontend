@@ -73,6 +73,8 @@ export const Feed = () => {
     const downVoteElem = elem.parentElement.children[2];
     const downVoteIcon = downVoteElem.children[0];
 
+    if (!icon || !elem || !downVoteElem || !downVoteIcon) return
+
     const question_id = e.target.getAttribute("data-qid");
 
     const res = await fetch(`${config.API_URL}/forum/upvote`, {
@@ -128,6 +130,8 @@ export const Feed = () => {
     const elem = e.target.parentElement;
     const upVoteElem = elem.parentElement.children[0];
     const upVoteIcon = upVoteElem.children[0];
+
+    if (!icon || !elem || !downVoteElem || !downVoteIcon) return
 
     const question_id = e.target.getAttribute("data-qid");
 
