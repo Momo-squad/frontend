@@ -30,7 +30,7 @@ const Weather = () => {
         }
       }, []);
 
-    const {isLoading: weatherIsLoading, data: weatherData, error: weatherError} = useQuery('weather', async() => {
+    const {isLoading: weatherIsLoading, data: weatherData, error: weatherError}= useQuery('weather', async() => {
         const res = await axios({
             method: 'get',
             url: `https://atlas.microsoft.com/weather/currentConditions/json?api-version=1.0&query=${Location.lat ? Location.lat : 25},${Location.long? Location.long : 80}&subscription-key=${MICROSOFT_WEATHER_API_KEY}`,

@@ -4,6 +4,7 @@ import { FeedContext } from "../../context/FeedContextProvider";
 
 export const Sidebar = () => {
   const { setPostType } = useContext(FeedContext);
+
   const newFollowingPosts = 4;
 
   return (
@@ -12,7 +13,9 @@ export const Sidebar = () => {
         <button
           className="item"
           id="newest"
-          onClick={() => setPostType("recent")}
+          onClick={() => {
+            setPostType("recent")
+          }}
         >
           <i className="bi bi-asterisk"></i>
           <span>
@@ -23,7 +26,9 @@ export const Sidebar = () => {
         <button
           className="item"
           id="popular"
-          onClick={() => setPostType("popular")}
+          onClick={() => {
+            setPostType("popular")
+          }}
         >
           <i className="bi bi-bookmark-star-fill"></i>
           <span>
@@ -34,7 +39,9 @@ export const Sidebar = () => {
         <button
           className="item"
           id="followed"
-          onClick={() => setPostType("following")}
+          onClick={() => {
+            setPostType("following")
+          }}
         >
           <i className="bi bi-plus-square-fill"></i>
           <span>

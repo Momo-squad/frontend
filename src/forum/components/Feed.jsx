@@ -2,6 +2,8 @@ import { useRef, useEffect } from "react";
 import "../styles/Feed.css";
 import { config } from "../../config";
 
+import { useQuery, useQueryClient } from 'react-query';
+
 import CreatePost from "./createPost";
 
 import { useState } from "react";
@@ -11,34 +13,41 @@ import { UserContext } from "../../context/userContext";
 import { useContext } from "react";
 import { FeedContext } from "../../context/FeedContextProvider";
 
+
 export const Feed = () => {
-  const [posts, setPosts] = useState([]);
+  // Get QueryClient from the context
+  const queryClient = useQueryClient();
+
   const [isPostLoading, setIsPostLoading] = useState(false);
   const { postType, setPostType } = useContext(FeedContext);
   const { user } = useContext(UserContext);
   const numImages = 2;
 
-  useEffect(() => {
-    fetchPost(postType);
-  }, [postType]);
+  if (postType) useEffect(() => { refetch() }, [postType])
 
   const fetchPost = async (type) => {
-    setIsPostLoading(true);
     const res = await fetch(`${config.API_URL}/forum/posts/${type}`, {
       headers: {
         authorization: localStorage.getItem("token"),
       },
     });
-    const data = await res.json();
-    setIsPostLoading(false);
 
+    const data = await res.json();
+    
     if (data.error || data.success === false) {
       return toast.error(data.error);
     }
 
-    setPosts(data.data);
-    toast.success(data.message);
+    return data.data
   };
+
+  const {isLoading, data: posts, error, refetch} = useQuery("feedPosts", () => fetchPost(postType), {
+  });
+
+  if (isLoading) return
+  if (error){
+    toast.error("Error encountered at fetch")
+  }
 
   const handleFollow = async (e) => {
     let user_id = e.target.getAttribute("data-id");
@@ -53,14 +62,12 @@ export const Feed = () => {
 
     const data = await res.json();
 
-    console.log(data.er);
-
     if (data.error || data.success === false) {
       return toast.error(data.error);
     }
 
+    queryClient.invalidateQueries('feedPosts')
     toast.success(data.message);
-    fetchPost(postType);
   };
 
   const handleCommentSubmit = () => {
@@ -93,9 +100,6 @@ export const Feed = () => {
     }
 
     toast.success(data.message);
-
-    fetchPost(postType);
-
     if (downVoteElem.className == "") {
       if (elem.className == "" && downVoteElem.className == "") {
         downVoteElem.classList.toggle("inactive");
@@ -121,7 +125,6 @@ export const Feed = () => {
       elem.classList.toggle("inactive");
       icon.classList.remove("bi-arrow-up-square-fill");
       icon.classList.add("bi-arrow-up-square");
-      console.log("already downvoted");
     }
   };
 
@@ -130,12 +133,10 @@ export const Feed = () => {
     const elem = e.target.parentElement;
     const upVoteElem = elem.parentElement.children[0];
     const upVoteIcon = upVoteElem.children[0];
-    console.log({upVoteElem, upVoteIcon,elem})
 
     if (!icon || !elem || !upVoteElem || !upVoteIcon) return;
 
     const question_id = e.target.getAttribute("data-qid");
-
     const res = await fetch(`${config.API_URL}/forum/downvote`, {
       method: "POST",
       headers: {
@@ -152,8 +153,6 @@ export const Feed = () => {
     }
 
     toast.success(data.message);
-
-    fetchPost(postType);
 
     if (upVoteElem.className == "") {
       if (elem.className == "inactive") {
@@ -180,7 +179,6 @@ export const Feed = () => {
       elem.classList.toggle("inactive");
       icon.classList.remove("bi-arrow-down-square");
       icon.classList.add("bi-arrow-down-square-fill");
-      console.log("already upvoted");
     }
   };
 
