@@ -20,7 +20,9 @@ export const Login = () => {
   const { user, setUser } = useContext(UserContext);
 
   const [loginStatus, setLoginStatus] = useState(false);
-  
+
+  console.log(user);
+
   // initially set the role to farmer (user)
   if (!user.role) {
     user.role = "user";
@@ -34,7 +36,7 @@ export const Login = () => {
 
     if (!user.email || !user.password) {
       setLoginStatus(false);
-      setUser({})
+      setUser({});
       return toast.error("All fields are required.");
     }
 
@@ -68,11 +70,17 @@ export const Login = () => {
     if (!userInfo) {
       userInfo = {};
     }
-    console.log(userInfo);
-    setUser(JSON.parse(userInfo));
+
+    userInfo = JSON.parse(userInfo);
+
+    setUser(userInfo);
 
     setTimeout(() => {
-      navigate("/dashboard");
+      if (userInfo.role === "user") {
+        navigate("/dashboard");
+      } else {
+        navigate("/dashboard/seller");
+      }
     }, 2000);
   };
 

@@ -32,6 +32,12 @@ import Sell from "./dashboard/user-dashboard/components/sell";
 import Disease from "./dashboard/user-dashboard/components/disease";
 import Setup from "./dashboard/user-dashboard/components/setup";
 import Profile from "./dashboard/user-dashboard/components/profile";
+import { SellerSidebar } from "./dashboard/seller-dashboard/components/SideBar";
+import SellerHome from "./dashboard/seller-dashboard/components/SellerHome";
+import SellerOrders from "./dashboard/seller-dashboard/components/SellerOrders";
+import SellerP2P from "./dashboard/seller-dashboard/components/SellerP2P";
+import SellerManage from "./dashboard/seller-dashboard/components/SellerManage";
+import SellerProfile from "./dashboard/seller-dashboard/components/SellerProfile";
 
 //lazy load the dashboards components
 // const UserHome  = lazy(() => import('./dashboard/user-dashboard/components/home')) ;
@@ -49,11 +55,11 @@ function App() {
 
   useEffect(() => {
     let userInfo = localStorage.getItem("userInfo");
-    
+
     if (!userInfo) {
       userInfo = {};
     } else {
-      userInfo = JSON.parse(userInfo)
+      userInfo = JSON.parse(userInfo);
       setUser(userInfo);
     }
   }, []);
@@ -89,7 +95,7 @@ function App() {
                   path="/dashboard/operations"
                   element={
                     <Dashboard
-                      sidebar={<UserSidebar active={"operations"} />}
+                      sidebar={<UserSidebar />}
                       component={<Operations />}
                     />
                   }
@@ -165,10 +171,53 @@ function App() {
 
                 {/* routes for seller's dashboard */}
                 <Route
-                  path="/dashboard/buy"
-                  element={<h1>Seller's Buy Page</h1>}
+                  path="/dashboard/seller"
+                  element={
+                    <Dashboard
+                      sidebar={<SellerSidebar />}
+                      component={<SellerHome />}
+                    />
+                  }
                 />
-                <Route path="/dashboard/order" element={<h1>Order Page</h1>} />
+                <Route
+                  path="/dashboard/seller/orders"
+                  element={
+                    <Dashboard
+                      sidebar={<SellerSidebar />}
+                      component={<SellerOrders />}
+                    />
+                  }
+                />
+
+                <Route
+                  path="/dashboard/seller/p2p"
+                  element={
+                    <Dashboard
+                      sidebar={<SellerSidebar />}
+                      component={<SellerP2P />}
+                    />
+                  }
+                />
+
+                <Route
+                  path="/dashboard/seller/manage"
+                  element={
+                    <Dashboard
+                      sidebar={<SellerSidebar />}
+                      component={<SellerManage />}
+                    />
+                  }
+                />
+
+                <Route
+                path="/dashboard/seller/profile"
+                element={
+                  <Dashboard
+                    sidebar={<SellerSidebar />}
+                    component={<SellerProfile />}
+                  />
+                }
+              />
 
                 {/* Error 404 page */}
                 <Route

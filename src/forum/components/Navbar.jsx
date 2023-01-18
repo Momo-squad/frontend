@@ -23,6 +23,21 @@ export const Navbar = () => {
     navigate("/login");
   };
 
+  const handleRedirectToDashboard = () => {
+    let userInfo = localStorage.getItem("userInfo");
+
+    if (!userInfo) {
+      return navigate("/login");
+    }
+
+    userInfo = JSON.parse(userInfo);
+    if (userInfo.role === "user") {
+      navigate("/dashboard");
+    } else {
+      navigate("/dashboard/seller");
+    }
+  };
+
   return (
     <>
       <div className="navbar">
@@ -53,7 +68,7 @@ export const Navbar = () => {
               data-bs-toggle="tab"
               data-bs-target="#nav-dashboard"
               role="tab"
-              onClick={() => navigate("/dashboard")}
+              onClick={handleRedirectToDashboard}
             >
               <i className="bi bi-box-seam"></i>
             </button>
@@ -72,7 +87,10 @@ export const Navbar = () => {
                 >
                   Login
                 </button>
-                <button onClick={() => window.open("/navigate")} className="signup">
+                <button
+                  onClick={() => window.open("/navigate")}
+                  className="signup"
+                >
                   Signup
                 </button>
               </div>
@@ -90,13 +108,18 @@ export const Navbar = () => {
                 <div className="dropdown">
                   <button data-bs-toggle="dropdown" className="notification">
                     <i className="bi bi-bell-fill"></i>
-                    <span class="position-absolute top-0 start-100 
-                    translate-middle badge rounded-pill bg-danger">
+                    <span
+                      class="position-absolute top-0 start-100 
+                    translate-middle badge rounded-pill bg-danger"
+                    >
                       9
                     </span>
                   </button>
-                  <div className="dropdown-menu" style={{ overflowY: "scroll" }}>
-                        <Notification />
+                  <div
+                    className="dropdown-menu"
+                    style={{ overflowY: "scroll" }}
+                  >
+                    <Notification />
                   </div>
                 </div>
 

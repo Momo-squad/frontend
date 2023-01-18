@@ -84,7 +84,7 @@ export const Signup = () => {
     toast.success(data.message);
 
     setTimeout(() => {
-      navigate("/dashboard");
+      navigate("/login");
     }, 1500);
   };
 
