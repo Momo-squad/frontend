@@ -292,7 +292,7 @@ export const Feed = () => {
                         <button
                           className="comment"
                           data-bs-toggle="collapse"
-                          data-bs-target="#post-1"
+                          data-bs-target={`#${item._id}`}
                         >
                           <i className="bi bi-chat-left-text"></i>
                           Comment
@@ -304,7 +304,7 @@ export const Feed = () => {
                       </div>
 
                       <div className="content-box-wrapper">
-                        <div className="collapse" id="post-1">
+                        <div className="collapse" id={item._id}>
                           <div className="comment-box">
                             <div className="create-comment-wrapper">
                               <span className="author-img">

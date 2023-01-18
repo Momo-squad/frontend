@@ -11,8 +11,9 @@ export const FarmDisplay = () => {
                     <button class="mx-auto">Watch about Farmap</button>
                 </div>
             </div>
-            <label htmlFor="#" className="suggestions-label">Suggestions</label>
             <div className="friends-suggestion">
+            <label htmlFor="#" className="suggestions-label">Suggestions</label>
+
                 <div className="user">
                     <div className="left">
                         <div class="user-avatar">

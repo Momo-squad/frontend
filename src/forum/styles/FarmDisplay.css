@@ -40,11 +40,12 @@
 /* =========================================== */
 
 .farm-display label.suggestions-label{
-    margin: 25px 0 15px 0;
+    margin: 5px 0 10px 0;
     font-size: 20px;
     font-weight: 600;
 }
 .farm-display .friends-suggestion{
+    margin-top: 30px !important;
     padding: 20px 20px;
     display: flex;
     flex-direction: column;

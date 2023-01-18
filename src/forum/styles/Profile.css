@@ -6,21 +6,21 @@
     background-color: #eef2f7;
 }
 
-.forum .feed-posts{
+.profile-container .feed-posts{
     max-width: 600px !important;
 }
 
-.forum .profile-section .nav-tabs{
+.profile-container .nav-tabs{
     width: max-content;
     background-color: white;
 }
 
-.forum .profile-section .nav-tabs button{
+.profile-container .nav-tabs button{
     border-radius: 0px;
     color: black;
 }
 
-.forum .profile-section .nav-tabs button.active{
+.profile-container .nav-tabs button.active{
     border: 1px solid #cccc;
 }
 
