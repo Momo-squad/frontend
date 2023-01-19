@@ -70,7 +70,8 @@ export const Feed = () => {
     toast.success(data.message);
   };
 
-  const handleCommentSubmit = () => {
+  const handleCommentSubmit = (e) => {
+    e.preventDefault()
     //do sth here
   };
 
@@ -99,6 +100,7 @@ export const Feed = () => {
       return toast.error(data.error);
     }
 
+    refetch()
     toast.success(data.message);
     if (downVoteElem.className == "") {
       if (elem.className == "" && downVoteElem.className == "") {
@@ -152,6 +154,7 @@ export const Feed = () => {
       return toast.error(data.error);
     }
 
+    refetch()
     toast.success(data.message);
 
     if (upVoteElem.className == "") {
@@ -190,7 +193,7 @@ export const Feed = () => {
   return (
     <>
       <div className="feed">
-        <CreatePost fetchPost={fetchPost} />
+        <CreatePost refetch={refetch} />
 
         <div className="feed-posts">
           {isPostLoading ? <Loading /> : ""}

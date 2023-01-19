@@ -21,8 +21,9 @@ import { Dashboard } from "./dashboard/dashboard";
 //importing dashboard componetns
 import { Login } from "./Routes/login";
 import { Signup } from "./Routes/signup";
-import { UserSidebar } from "./dashboard/user-dashboard/components/sidebar";
 
+//importing user dashboard components
+import { UserSidebar } from "./dashboard/user-dashboard/components/sidebar";
 import UserHome from "./dashboard/user-dashboard/components/home";
 import Sensors from "./dashboard/user-dashboard/components/sensors";
 import Insights from "./dashboard/user-dashboard/components/insights";
@@ -32,12 +33,13 @@ import Sell from "./dashboard/user-dashboard/components/sell";
 import Disease from "./dashboard/user-dashboard/components/disease";
 import Setup from "./dashboard/user-dashboard/components/setup";
 import Profile from "./dashboard/user-dashboard/components/profile";
-import { SellerSidebar } from "./dashboard/seller-dashboard/components/SideBar";
-import SellerHome from "./dashboard/seller-dashboard/components/SellerHome";
-import SellerOrders from "./dashboard/seller-dashboard/components/SellerOrders";
-import SellerP2P from "./dashboard/seller-dashboard/components/SellerP2P";
-import SellerManage from "./dashboard/seller-dashboard/components/SellerManage";
-import SellerProfile from "./dashboard/seller-dashboard/components/SellerProfile";
+
+//importing seller dashboard components
+import { SellerSidebar } from "./dashboard/seller-dashboard/Pages/SellerSidebar";
+import SellerHome from "./dashboard/seller-dashboard/Pages/SellerHome";
+import SellerOrders from "./dashboard/seller-dashboard/Pages/SellerOrders";
+import SellerP2P from "./dashboard/seller-dashboard/Pages/SellerP2P";
+import SellerProfile from "./dashboard/seller-dashboard/Pages/SellerProfile";
 
 //lazy load the dashboards components
 // const UserHome  = lazy(() => import('./dashboard/user-dashboard/components/home')) ;
@@ -174,7 +176,7 @@ function App() {
                   path="/dashboard/seller"
                   element={
                     <Dashboard
-                      sidebar={<SellerSidebar />}
+                      sidebar={<SellerSidebar active={"home"} />}
                       component={<SellerHome />}
                     />
                   }
@@ -183,7 +185,7 @@ function App() {
                   path="/dashboard/seller/orders"
                   element={
                     <Dashboard
-                      sidebar={<SellerSidebar />}
+                      sidebar={<SellerSidebar active={"orders"} />}
                       component={<SellerOrders />}
                     />
                   }
@@ -193,18 +195,8 @@ function App() {
                   path="/dashboard/seller/p2p"
                   element={
                     <Dashboard
-                      sidebar={<SellerSidebar />}
+                      sidebar={<SellerSidebar active={"p2p"} />}
                       component={<SellerP2P />}
-                    />
-                  }
-                />
-
-                <Route
-                  path="/dashboard/seller/manage"
-                  element={
-                    <Dashboard
-                      sidebar={<SellerSidebar />}
-                      component={<SellerManage />}
                     />
                   }
                 />
@@ -213,7 +205,7 @@ function App() {
                 path="/dashboard/seller/profile"
                 element={
                   <Dashboard
-                    sidebar={<SellerSidebar />}
+                    sidebar={<SellerSidebar active={"profile"} />}
                     component={<SellerProfile />}
                   />
                 }

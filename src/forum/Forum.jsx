@@ -35,8 +35,7 @@ export const Forum = () => {
                 className="home tab-pane fade show active"
                 id="nav-home"
                 role="tabpanel"
-                tabIndex="0"
-              >
+                tabIndex="0" >
                 <Sidebar />
                 <Feed />
                 <FarmDisplay />
@@ -46,25 +45,14 @@ export const Forum = () => {
                 className="tab-pane fade"
                 id="nav-market"
                 role="tabpanel"
-                tabIndex="0"
-              >
+                tabIndex="0">
                 This is Market Stats Tab
               </div>
               <div
                 className="tab-pane fade"
-                id="nav-dashboard"
-                role="tabpanel"
-                tabIndex="0"
-              >
-                This is Dashboard tab
-              </div>
-
-              <div
-                className="tab-pane fade"
                 id="farmap-profile"
                 role="tabpanel"
-                tabIndex="0"
-              >
+                tabIndex="0" >
                 <Profile />
               </div>
             </div>

@@ -60,7 +60,7 @@ export const UserSidebar = ({ active }) => {
             <p>P2P</p>
           </button>
           <button
-            className="item disease mb-5"
+            className="item disease mb-3"
             onClick={() => Navigate("/dashboard/disease")}
           >
             <i className="bi bi-bug"></i>
@@ -68,22 +68,17 @@ export const UserSidebar = ({ active }) => {
           </button>
 
           <label htmlFor="#" className="label">
-            Setup
+            Account
           </label>
           <button
-            className="item setup mb-4"
+            className="item setup"
             onClick={() => Navigate("/dashboard/setup")}
           >
             <i className="bi bi-house-add"></i>
             <p>Manage</p>
           </button>
-
-          <label htmlFor="#" className="label">
-            Account
-          </label>
-
-          <button className="item setup mb-4" onClick={() => Navigate("/")}>
-            <i class="bi bi-rss"></i>
+          <button className="item" onClick={() => Navigate("/")}>
+            <i className="bi bi-rss"></i>
             <p>Forum</p>
           </button>
           <div className="dropdown">
