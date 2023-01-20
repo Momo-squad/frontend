@@ -18,6 +18,24 @@ const Weather = () => {
         lat: 0,
         long: 0
     });
+    var monthNames = 
+    ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+
+    var DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    var DAY = DAY_NAMES[(new Date()).getUTCDay()];
+
+    function formatDate() {
+        const date = new Date()
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0'+minutes : minutes;
+        var strTime = hours + ':' + minutes + ' ' + ampm;
+        return date.getDate() + " " + monthNames[date.getMonth()] + ", " + strTime;
+    }
 
     useEffect(() => {
         if (navigator?.geolocation) {
@@ -30,7 +48,7 @@ const Weather = () => {
         }
       }, []);
 
-    const {isLoading: weatherIsLoading, data: weatherData, error: weatherError} = useQuery('weather', async() => {
+    const {isLoading: weatherIsLoading, data: weatherData, error: weatherError}= useQuery('weather', async() => {
         const res = await axios({
             method: 'get',
             url: `https://atlas.microsoft.com/weather/currentConditions/json?api-version=1.0&query=${Location.lat ? Location.lat : 25},${Location.long? Location.long : 80}&subscription-key=${MICROSOFT_WEATHER_API_KEY}`,
@@ -66,8 +84,8 @@ const Weather = () => {
         <div className="weather-container">
             <div className="img-cotainer">
                 <div>
-                    <span className="current-date">20 Jan, 12:30AM</span>
-                    <span className="day">Sunday</span>
+                    <span className="current-date">{formatDate()}</span>
+                    <span className="day">{DAY}</span>
                 </div>
                 <img src={sunnyDay} alt="sunny day" />
                 <div className="phrase">

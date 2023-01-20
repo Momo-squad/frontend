@@ -8,9 +8,9 @@
     align-items: center;
     width: 250px;
     max-width: 250px;
-    height: max-content;
-    max-height: max-content;
-    overflow-y: auto;
+    height: 100%;
+    max-height: 100% !important;
+    overflow-y: scroll;
     border-right: 1px solid #eeee;
     background-color: white;
 }
@@ -28,28 +28,29 @@
 
 .sidebar-menu{
     width: 100%;
-    min-height: calc(100vh - 70px);
+    min-height: 100vh !important;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
 }
 
 .sidebar-menu .label{
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 .sidebar-menu .dropdown{
     width: 100%;
 }
 .sidebar-menu button.item{
+    margin-bottom: 0px !important;
+    padding: 10px 0;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     font-size: 15px !important;
-    margin-bottom: 10px;
     width: 100%;
     height: 45px;
     text-align: left;
@@ -62,7 +63,6 @@
 }
 
 .sidebar-menu button.item p{
-    margin: auto;
     margin-left: -5%;
 }
 
@@ -83,6 +83,7 @@
 
 /* -------------------------------------------- */
 
+.sidebar-menu.home button:focus,
 .sidebar-menu.home button.home,
 .sidebar-menu.operations button.operations,
 .sidebar-menu.sensors button.sensors,
@@ -130,7 +131,6 @@
 .sidebar::-webkit-scrollbar {
     border-radius: 5px;
     width: 4px;
-    display: none !important;
   }
   
   /* Track */
@@ -140,10 +140,10 @@
   
   /* Handle */
 .sidebar::-webkit-scrollbar-thumb {
-    background: rgba(202, 202, 202, 0.8);
+    background: rgba(221, 221, 221, 0.8);
   }
   
   /* Handle on hover */
 .sidebar::-webkit-scrollbar-thumb:hover {
-    background: rgb(202, 202, 202);
+    background: rgb(220, 220, 220);
   }

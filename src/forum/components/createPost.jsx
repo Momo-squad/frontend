@@ -21,7 +21,7 @@ import { useContext } from "react";
 import { config } from "../../config";
 const MIN_TEXTAREA_HEIGHT = 32;
 
-export default function CreatePost({ fetchPost }) {
+export default function CreatePost({ refetch }) {
   const [open, setOpen] = useState(false);
   const [postDescription, setPostDescription] = useState("");
   const [keywords, setKeywords] = useState("");
@@ -92,7 +92,7 @@ export default function CreatePost({ fetchPost }) {
     }
 
     toast.success(data.message);
-    fetchPost(postType);
+    refetch()
     setKeywords("");
     setPostDescription("");
     setImage([]);

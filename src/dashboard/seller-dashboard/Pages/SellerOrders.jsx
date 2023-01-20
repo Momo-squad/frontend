@@ -136,9 +136,6 @@ function CustomToolbar() {
 const SellerOrders = () => {
   const [rows, setRows] = useState(initialRows);
 
-  
-
-  
   const deleteOrder = useCallback(
     (id) => () => {
       //do the delete post request here
@@ -301,19 +298,14 @@ const SellerOrders = () => {
   return (
     <>
       <label htmlFor="#" className="content-header">
-        Orders
+        Orders History
       </label>
 
       <div className="sell-page-container">
-        <div className="order-highlights">
-          <p className="text-muted">
-            <h1>Your orders history.</h1>
-          </p>
-        </div>
         <div className="orders-data-grid">
           <Box
             sx={{
-              height: 500,
+              height: 550,
               width: "100%",
               backgroundColor: "white",
               "& .super-app-theme--cell": {
