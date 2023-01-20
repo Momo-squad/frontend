@@ -53,8 +53,6 @@ export const Feed = () => {
 
     const data = await res.json();
 
-    console.log(data.er);
-
     if (data.error || data.success === false) {
       return toast.error(data.error);
     }

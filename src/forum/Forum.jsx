@@ -9,19 +9,23 @@ import { Navbar } from "./components/Navbar";
 import { Profile } from "./components/Profile";
 import { Sidebar } from "./components/Sidebar";
 import { FarmDisplay } from "./components/FarmDisplay";
-import {  useContext } from "react";
+import { useContext, useEffect } from "react";
 import { UserContext } from "../context/userContext";
 import { useNavigate } from "react-router-dom";
 import FeedContextProvider from "../context/FeedContextProvider";
+import { config } from "../config";
 
 export const Forum = () => {
-
   let navigate = useNavigate();
   const { user } = useContext(UserContext);
 
-  if (!user) {
-    return navigate("/login");
-  }
+  useEffect(() => {
+    // redirect to login if not logged in.
+    if (!localStorage.getItem("token")) {
+      console.log("no user");
+      return navigate("/login");
+    }
+  }, []);
 
   return (
     <>

@@ -1,11 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import "../styles/Navbar.css";
 import { useNavigate } from "react-router-dom";
 import Notification from "./Notification";
+import { UserContext } from "../../context/userContext";
+import { config } from "../../config";
 
 export const Navbar = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setLoggedStatus] = useState(false);
+  const [newNotifications, setNewNotifications] = useState(0);
+  const [notifications, setNotifications] = useState([])
+  const { user } = useContext(UserContext);
+  let ws;
 
   useEffect(() => {
     let token = localStorage.getItem("token");
@@ -15,6 +21,33 @@ export const Navbar = () => {
       setLoggedStatus(false);
     }
   }, []);
+
+  useEffect(() => {
+    async function createWsConnection() {
+      if (user._id) {
+        const res = await fetch(`${config.API_URL}/negotiate?id=${user._id}`);
+        const data = await res.json();
+        ws = new WebSocket(data.url);
+
+        ws.addEventListener("message", (data) => {
+          let msg = JSON.parse(data.data);
+
+          if (msg.data.user_id !== user._id) {
+            return;
+          }
+          setNewNotifications(prev => prev + 1)
+          if(msg.event === "followed") {
+            setNotifications(prev => [{ text: `${msg.followed_by} followed you`, profile_pic: msg.profile_pic, date: (new Date(msg.createdAt).toLocaleString()) }, ...prev]);
+
+            console.log(notifications)
+          }
+
+        });
+      }
+    }
+
+    createWsConnection();
+  }, [user]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -106,13 +139,13 @@ export const Navbar = () => {
                 </div>
 
                 <div className="dropdown">
-                  <button data-bs-toggle="dropdown" className="notification">
+                  <button data-bs-toggle="dropdown" className="notification" onClick={() => setNewNotifications(0)}>
                     <i className="bi bi-bell-fill"></i>
                     <span
                       class="position-absolute top-0 start-100 
                     translate-middle badge rounded-pill bg-danger"
                     >
-                      9
+                      {newNotifications}
                     </span>
                   </button>
                   <div
