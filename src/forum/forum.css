@@ -8,6 +8,10 @@
     padding-top: 70px;
 }
 
+.css-126xj0f{
+    z-index: 999999 !important;
+}
+
 label.content-header{
     font-size: 30px;
     font-weight: 600;
